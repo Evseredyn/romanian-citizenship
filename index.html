@@ -11,7 +11,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./css/main.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -131,8 +131,8 @@
                     </article>
                 </li>
             </ul>
-            <p class="packages__text">Выберите пакет сопровождения, который лучше всего подходит вашему уровню задач и вовлечённости. Мы берём на себя весь процесс подготовки, подачи и сопровождения дела в Министерстве юстиции Румынии, обеспечивая прозрачность, точность и соблюдение всех юридических требований. Вам остаётся только пройти один визит для подтверждения личности — всё остальное мы делаем за вас.</p>
-            <a href="" class="packages__link">Узнать подробнее</a>
+            <p class="plan-card__text">Выберите пакет сопровождения, который лучше всего подходит вашему уровню задач и вовлечённости. Мы берём на себя весь процесс подготовки, подачи и сопровождения дела в Министерстве юстиции Румынии, обеспечивая прозрачность, точность и соблюдение всех юридических требований. Вам остаётся только пройти один визит для подтверждения личности — всё остальное мы делаем за вас.</p>
+            <a href="" class="plan-card__link">Узнать подробнее</a>
         </div>
      </div>
     </main>
@@ -141,62 +141,25 @@
     <script defer src="./js/mobile-menu.js"></script>
     <!-- Mobile menu -->
     <div class="mobile-menu__nav js-menu-container" id="mobile-menu">
+        <a class="mobile-menu__logo link" href="./index.html">
+            <img class="mobile-menu__img" src="./images/icons/logo-black.svg" alt="Sokhor Global - на главную" width="57" height="32">
+        </a>
         <ul class="mobile-menu__list list">
-            <li class="mobile-menu__item"><a class="mobile-menu__link link active" href="./index.html">Home</a></li>
-            <li class="mobile-menu__item"><a href="javaScript:void(0);" class="mobile-menu__link link">Services</a>
-            <ul class="mobile-submenu__list list">
-                <li class="mobile-submenu__item"><a href="./home-renovation.html" class="mobile-submenu__link link">Home Renovation</a></li>
-                <li class="mobile-submenu__item"><a href="./townhouse-renovation.html" class="mobile-submenu__link link">Townhouse Renovation</a></li>
-                <li class="mobile-submenu__item"><a href="./kitchen-renovation.html" class="mobile-submenu__link link">Kitchen Renovation</a></li>
-                <li class="mobile-submenu__item"><a href="./bathroom-renovation.html" class="mobile-submenu__link link">Bathroom Renovation</a></li>
-                <li class="mobile-submenu__item"><a href="./interior-painting.html" class="mobile-submenu__link link">Interior Painting</a></li>
-                <li class="mobile-submenu__item"><a href="./exterior-painting.html" class="mobile-submenu__link link">Exterior Painting</a></li>
-                <li class="mobile-submenu__item"><a href="./smart-home.html" class="mobile-submenu__link link">Smart Home</a></li>
-            </ul>
+            <li class="mobile-menu__item"><a class="mobile-menu__link link active" href="./index.html">Главная</a></li>
+            <li class="mobile-menu__item"><a href="javaScript:void(0);" class="mobile-menu__link link">Услуги</a>
+                <ul class="mobile-submenu__list list">
+                    <li class="mobile-submenu__item"><a href="#" class="mobile-submenu__link link">Гражданство Румынии</a></li>
+                    <li class="mobile-submenu__item"><a href="#" class="mobile-submenu__link link">Сбор документов</a></li>
+                    <li class="mobile-submenu__item"><a href="#" class="mobile-submenu__link link">Услуги</a></li>
+                </ul>
             </li>
-            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="./about-us.html">About us</a></li>
-            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="./recent-projects.html">Projects</a></li>
-            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="./blog.html">Blog</a></li>
-            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="./contacts.html">Contact us</a></li>
+            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="#">FAQ</a></li>
+            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="#">О нас</a></li>
+            <li class="mobile-menu__item"><a class="mobile-menu__link link" href="#">Контакты</a></li>
         </ul>
-        <ul class="mobile-contacts list">
-            <li class="mobile-contacts__item">
-                <div class="mobile-contacts__icon phone-icon" aria-label="Phone" href="#">
-                </div>
-                <div class="mobile-contacts__inner">
-                    <div class="mobile-contacts__label">Phone:</div>
-                    <a class="mobile-contacts__link link" href="tel:+18182055967">+1 (818) 205-5967</a>
-                </div>
-            </li>
-            <li class="mobile-contacts__item">
-                <div class="mobile-contacts__icon email-icon" aria-label="Email" href="#">
-                </div>
-                <div class="mobile-contacts__inner">
-                    <p class="mobile-contacts__label">Email:</p>
-                    <a class="mobile-contacts__link link" href="mailto:info@mtdtrenovation.com">info@mtdtrenovation.com</a>
-                </div>
-            </li>
-        </ul>
-        <ul class="socials__list list">
-            <li class="socials__item">
-                <a class="socials__link instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/mtdt_renovation">
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/mtdt.renovation">
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link google" aria-label="Google" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/BEtjBLXrdWcPNs7M6">
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link whatsapp" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer" href="https://wa.me/+18182055967">
-                </a>
-            </li>
-        </ul>
+        <a class="mobile-menu__call-me link" href="">Записаться на консультацию</a>
         <button class="mobile-menu__close-btn js-close-menu">
-            <img class="mobile-menu__close-icon" width="40" height="40" src="./images/icons/close-icon.png" alt="Mobile menu">
+            <img class="mobile-menu__close-icon" width="24" height="24" src="./images/icons/close-icon.svg" alt="Мобильное меню">
         </button>
     </div>
     <script
