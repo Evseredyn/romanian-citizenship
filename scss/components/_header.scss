@@ -1,0 +1,197 @@
+.header {
+  
+    /* Щоб паддінги не роздували ширину */
+    box-sizing: border-box;
+    /* Ваші базові відступи, які ви планували для десктопа та звичайних екранів */
+    // padding-top: 20px; 
+    
+    /* Додаємо безпечну зону зверху. 
+       На ПК це буде 20px + 0px = 20px.
+       На iPhone це буде 20px + (висота вирізу) = ідеальний відступ. */
+    // padding-top: calc(20px + env(safe-area-inset-top));
+    
+    /* Також варто додати для бокових відступів, якщо телефон повернуть горизонтально */
+    // padding-left: calc(15px + env(safe-area-inset-left));
+    // padding-right: calc(15px + env(safe-area-inset-right));
+
+    &__flex {
+
+        /* 1. Позиціонування (плаваючий над Hero) */
+        position: absolute;
+        top: 20px; /* Додаємо невеликий відступ зверху для ефекту "плавання" */
+        left: 16px; 
+        right: 16px; /* Разом з left створює відступи від країв екрану */
+        z-index: 100;
+
+        /* 2. Геометрія та відступи */
+        padding: 12px 16px;
+        border-radius: 16px;
+        
+        /* 3. Фон: Градієнт */
+        /* Напрямок "top left to right center" — це приблизно 110-120 градусів */
+        background: linear-gradient(110deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 100%);
+
+        /* 4. Ефект розмиття (Glassmorphism) */
+        /* Важливо: додаємо префікс для Safari */
+        -webkit-backdrop-filter: blur(34px);
+        backdrop-filter: blur(34px);
+
+        /* 5. Додатково: тонка рамка для підкреслення ефекту скла (часто є у Figma) */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        /* Щоб паддінги не роздували ширину */
+        box-sizing: border-box;
+
+        @include mq(desktop) {    
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__thumb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
+
+        // @include mq(tablet) {    
+        //     padding-top: 20px;
+        //     padding-bottom: 20px;
+        // }
+
+        @include mq(desktop) {    
+            padding-top: 30px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        color: $color-akcent;
+    }
+
+    &__logo {
+        fill: currentColor;
+        
+        @include mq(tablet) {    
+            width: 51px;
+            height: 54px;
+        }
+
+        @include mq(desktop) {   
+            width: 89px;
+            height: 94px;
+        }        
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        // color: $color-blue;
+        padding: 0px;
+        margin: 0;
+        cursor: pointer;
+
+        @include mq(desktop) {    
+            display: none;
+        }
+    }
+
+    &__icon {
+        fill: currentColor;
+        @include mq(tablet) {    
+            width: 41px;
+            height: 41px;
+        }
+    }
+    
+    &__call-me {
+        display: none;
+    
+        @include mq(desktop) {
+            display: block;
+            // font-family: $secondary-font;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.25;
+            text-transform: uppercase;
+            color: $color-akcent;
+            background-color: $color-white;
+            border: solid 2px $color-akcent;
+            border-radius: 40px;
+            margin-left: 64px;
+            padding: 17px 12px;
+        }
+    }
+}
+
+.site-nav {
+
+    @include mq(not-desktop) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+        gap: 60px;
+    }
+
+    &__item:nth-child(2) {
+        @include mq(desktop) {
+            position: relative;
+
+            & > .site-nav__link {
+
+                position: relative;
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    margin-left: 12px;
+                    vertical-align: middle;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    border-top: 6px solid $color-white;
+                    transition: border-color $duration $timing-function;
+                }
+            }
+
+            &:hover > .site-nav__link,
+            &:focus > .site-nav__link {
+                color: $color-akcent;
+
+                &::after {
+                    border-top-color: $color-akcent;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: 25px 0;
+        color: $color-white;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.45;
+        transition: color $duration $timing-function;
+    }
+
+    &__link:hover,
+    &__link:focus {
+        color: $color-akcent;
+        transition: color $duration $timing-function;
+    }
+
+    &__link.active {
+        font-size: 24px;
+        line-height: 1.33;
+    }
+}

@@ -1,0 +1,444 @@
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   padding-top: 111px;
+   font-family: $main-font;
+   color: $color-text;
+   background-color: $color-bg;
+
+   @include mq(desktop) {
+   padding-top: 175px;
+   }
+
+    @include mq(monitor) {
+   padding-top: 195px;
+   }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include mq(mobile) {
+        max-width: 480px;
+    }
+
+    @include mq(tablet) {
+        max-width: 768px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include mq(desktop) {
+        max-width: 1440px;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
+        @include mq(monitor) {
+        max-width: 1920px;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+}
+
+.padding-lr {
+
+    @include mq(tablet) {
+      padding: 0px 35px;
+    }
+
+    @include mq(desktop) {
+      padding: 0px 30px;
+    }
+}
+
+.section {
+   padding: 30px 0;
+
+   @include mq(tablet) {
+      padding: 40px 0;
+   }
+
+   @include mq(desktop) {
+      padding: 60px 0;
+   }
+}
+
+.link {
+   text-decoration: none;
+   color: currentColor;
+}
+
+.list {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.current {
+   color: $color-current;
+}
+
+.header {
+    /* Ваші стандартні відступи (наприклад, для десктопа) */
+    --base-padding-top: 20px;
+    --base-padding-side: 15px;
+
+    /* Динамічний відступ: база + безпечна зона пристрою */
+    padding-top: calc(var(--base-padding-top) + env(safe-area-inset-top));
+    padding-left: calc(var(--base-padding-side) + env(safe-area-inset-left));
+    padding-right: calc(var(--base-padding-side) + env(safe-area-inset-right));
+
+    /* Додатково: якщо у вас є фіксований футер, йому теж потрібна безпечна зона знизу */
+}
+
+.footer {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+// .heading {
+//     font-size: 26px;
+//     line-height: 1.2;
+//     font-weight: 600;
+//     margin-bottom: 10px;
+//     color: $color-white;
+//     text-align: center;
+
+//     @include mq(tablet) {
+//         font-size: 40px;
+//     }
+
+//     @include mq(desktop) {
+//     font-size: 48px;
+//     margin-bottom: 30px;
+//     }
+
+//     @include mq(monitor) {
+//     font-size: 56px;
+//     }
+// }
+
+// .subheading {
+//     font-size: 16px;
+//     line-height: 1.5;
+//     font-weight: 400;
+//     color: $color-white;
+//     text-align: center;
+//     margin-bottom: 15px;
+
+//     @include mq(tablet) {
+//         font-size: 20px;
+//     }
+
+//     @include mq(desktop) {
+//     font-size: 24px;
+//     line-height: 1.4;
+//     margin-bottom: 30px;
+//     }
+
+//     @include mq(monitor) {
+//     font-size: 28px;
+//     }
+// }
+
+// .socials__list {
+//     display: flex;
+//     align-items: center;
+//     gap: 15px;
+// }
+
+// .socials__link {
+//     display: inline-block;
+//     width: 40px;
+//     height: 40px;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     position: relative;
+//     transition: transform $duration $timing-function;
+
+//     &.instagram {
+//         background-image: url('../images/icons/instagram.png');
+
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-image: url('../images/icons/instagram-hover.png');
+//             background-size: contain;
+//             background-repeat: no-repeat;
+//             background-position: center;
+//             opacity: 0;
+//             transition: opacity $duration $timing-function;
+//         }
+
+//         &:hover,
+//         &:focus {
+//             &::after {
+//                 opacity: 1;
+//             }
+//         }
+//     }
+
+//     &.facebook {
+//         background-image: url('../images/icons/facebook.png');
+
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-image: url('../images/icons/facebook-hover.png');
+//             background-size: contain;
+//             background-repeat: no-repeat;
+//             background-position: center;
+//             opacity: 0;
+//             transition: opacity $duration $timing-function;
+//         }
+
+//         &:hover,
+//         &:focus {
+//             &::after {
+//                 opacity: 1;
+//             }
+//         }
+//     }
+
+//     &.google {
+//         background-image: url('../images/icons/google.png');
+
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-image: url('../images/icons/google-hover.png');
+//             background-size: contain;
+//             background-repeat: no-repeat;
+//             background-position: center;
+//             opacity: 0;
+//             transition: opacity $duration $timing-function;
+//         }
+
+//         &:hover,
+//         &:focus {
+//             &::after {
+//                 opacity: 1;
+//             }
+//         }
+//     }
+
+//     &.whatsapp {
+//         background-image: url('../images/icons/whatsapp.png');
+
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-image: url('../images/icons/whatsapp-hover.png');
+//             background-size: contain;
+//             background-repeat: no-repeat;
+//             background-position: center;
+//             opacity: 0;
+//             transition: opacity $duration $timing-function;
+//         }
+
+//         &:hover,
+//         &:focus {
+//             &::after {
+//                 opacity: 1;
+//             }
+//         }
+//     }
+// }
+
+// .policy-container {
+//     padding: 15px;
+//     font-family: Arial, sans-serif;
+//     @include mq(tablet) {
+//         max-width: 800px;
+//         padding: 30px;
+//     }
+
+//     @include mq(desktop) {
+//         max-width: 1000px;
+//         padding: 20px;
+//     }
+// }
+
+// .policy-container h1 {
+//     font-size: 1.8em;
+//     margin-bottom: 20px;
+//     font-family: "Lora", serif;
+//     text-align: left;
+
+//     @include mq(desktop) {
+//         font-size: 2.2em;
+//         max-width: 1000px;
+//     }
+// }
+
+// .policy-container h2 {
+//     font-size: 1.4em;
+//     margin-top: 30px;
+//     margin-bottom: 15px;
+//     color: #555;
+
+//     @include mq(desktop) {
+//         font-size: 1.6em;
+//     }
+// }
+
+// .policy-container h3 {
+//     font-size: 1.2em;
+//     margin-top: 15px;
+//     color: #666;
+// }
+
+// .policy-container p, .policy-container li {
+//     font-size: 15px;
+//     line-height: 1.6;
+//     margin-bottom: 1em;
+//     color: #777;
+
+//     @include mq(desktop) {
+//     font-size: 16px;
+
+//     }
+// }
+
+// .policy-container ul {
+//     padding-left: 25px;
+//     margin-bottom: 15px;
+// }
+
+// .link-external {
+//     position: relative;
+//     padding-right: 15px; 
+
+//     &::after {
+//         display: none;
+
+//         @include mq(tablet) {
+//             display: inline-block;
+//             content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>');
+//             position: absolute;
+//             top: 50%;
+//             right: 0;
+//             transform: translateY(-50%);
+//             width: 10px;
+//             height: 10px;
+//         }
+
+//         @include mq(desktop) {
+//             content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>');
+//             width: 12px;
+//             height: 12px;
+//         }
+//     }
+// }
+
+.scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $color-akcent;
+    color: $color-white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, background-color 0.3s;
+
+    @include mq(tablet) {
+        bottom: 20px;
+        left: calc(50% + 384px - 80px);
+    }
+
+    @include mq(desktop) {
+        bottom: 60px;
+        width: 50px;
+        height: 50px;
+        left: calc(50% + 695px - 60px);
+    }
+
+    @include mq(monitor) {
+        left: calc(50% + 960px - 300px);
+    }
+}
+
+.scroll-to-top-btn:hover {
+    background-color: $color-akcent;
+}
+
+section[id], :target, h2[id], div[id] {
+    scroll-margin-top: 100px;
+
+    @include mq(tablet) {
+        scroll-margin-top: 150px;
+    }
+}
