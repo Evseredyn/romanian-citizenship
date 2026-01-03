@@ -1,34 +1,165 @@
 .pricing {
+    padding: 40px 0;
 
-    &__title--top {
+    &__pre-title {
+        margin-bottom: 8px;
+        max-width: 150px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        color: $color-akcent;
     }
 
     &__title {
+        margin-bottom: 24px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        color: $color-black;
     }
-    
+
+    &__tabs {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        background: $color-white-bg;
+        border-radius: 16px;
+        padding: 4px;
+        margin-bottom: 18px;
+
+        @include mq(tablet) {
+            display: none; // Ховаємо на планшетах і вище
+        }
+    }
+
+    &__tab {
+        flex: 1;
+        padding: 12px 10px;
+        border: none;
+        border-radius: 12px;
+        font-size: clamp(0.625rem, 0.536rem + 0.45vw, 0.75rem);
+        font-weight: 400;
+        color: $color-akcent;
+        background: transparent;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &.active {
+            color: $color-white;
+            background: $color-akcent;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    }
+
     &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 32px;
+
+        @include mq(tablet) {
+            flex-direction: row;
+            justify-content: center;
+        }
     }
 
     &__item {
+        display: none; // Ховаємо всі на мобільці
+
+        &.active {
+            display: block; // Показуємо тільки активну картку
+        }
+
+        @include mq(tablet) {
+            display: block !important; // На планшеті показуємо всі
+            flex: 1;
+            max-width: 350px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 32px;
+        font-size: clamp(0.75rem, 0.661rem + 0.45vw, 0.875rem);
+        font-weight: 400;
+        line-height: 1.4;
+        letter-spacing: 0.02em;
+        color: $color-secondary-title;
+    }
+
+    &__link {
+        display: block;
+        padding: 12px 32px;
+        font-size: 14px;
+        line-height: 1.7;
+        font-weight: 500;
+        color: $color-white;
+        background-color: $color-akcent;
+        text-align: center;
+        border-radius: 16px;
     }
 }
 
 .plan-card {
+    height: 100%;
 
-    &__name {
-    }
-    &__price {
-    }
+    // &__name {
+    //     font-size: 20px;
+    //     margin-bottom: 12px;
+    // }
+
     &__subtitle {
+        margin-bottom: 8px;
+        max-width: 280px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.02em;
+        color: $color-secondary-title;
     }
-    &__list {
+
+    &__price {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: $color-black;
+        margin-bottom: 8px;
     }
-    &__item {
+
+    &__bullets {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        padding-top: 24px;
+        padding-left: 32px;
+        font-size: 14px;
+        line-height: 1.4;
+        border-top: 1px solid $color-border;
     }
+
     &__bullet {
-    }
-    &__text {
-    }
-    &__link {
+        position: relative;
+        max-width: 300px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: $color-black;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            // top: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-image: url('../images/icons/ticker.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
 }
