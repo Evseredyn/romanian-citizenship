@@ -23,7 +23,7 @@
     &__tabs {
         display: flex;
         justify-content: space-between;
-        gap: 16px;
+        gap: clamp(0.75rem, 0.25rem + 2.5vw, 1rem);
         background: $color-white-bg;
         border-radius: 16px;
         padding: 4px;
@@ -39,7 +39,7 @@
         padding: 12px 10px;
         border: none;
         border-radius: 12px;
-        font-size: clamp(0.625rem, 0.536rem + 0.45vw, 0.75rem);
+        font-size: 12px;
         font-weight: 400;
         color: $color-akcent;
         background: transparent;
