@@ -236,6 +236,8 @@ summary {
 
 html {
   scroll-behavior: smooth;
+  /* Резервує місце під скрол, щоб контент не смикався */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -439,6 +441,31 @@ section[id], :target, h2[id], div[id] {
   }
 }
 
+.mobile-menu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  z-index: 30;
+  /* ПАРАМЕТРИ З FIGMA */
+  background-color: rgba(137, 161, 255, 0.26);
+  backdrop-filter: blur(8px);
+  /* Анімація появи */
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu__overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu__nav {
+  z-index: 31;
+  padding-top: calc(40px + env(safe-area-inset-top));
+}
 .mobile-menu__nav {
   position: fixed;
   top: 0;
@@ -447,6 +474,7 @@ section[id], :target, h2[id], div[id] {
   min-height: 550px;
   padding: 40px 20px;
   background-color: #F6F6F6;
+  border-radius: 0 0 32px 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,8 +486,8 @@ section[id], :target, h2[id], div[id] {
       -ms-flex-align: center;
           align-items: center;
   z-index: 31;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateY(-101%);
+          transform: translateY(-101%);
   -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
@@ -476,8 +504,8 @@ section[id], :target, h2[id], div[id] {
   }
 }
 .mobile-menu__nav.is-open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .mobile-menu__list {
   display: -webkit-box;
@@ -786,8 +814,8 @@ nav li:hover > .site-subnav__list,
   background-position: center bottom;
   background-size: cover;
   background-color: #C4C4C4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-hero-bg.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/mob-hero-bg.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-hero-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-hero-bg.jpg);
 }
 @media screen and (min-width: 1440px) {
   .hero {
@@ -795,7 +823,7 @@ nav li:hover > .site-subnav__list,
   }
 }
 .hero__heading {
-  font-size: 32px;
+  font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.02em;

@@ -1,5 +1,7 @@
 html {
    scroll-behavior: smooth;
+   /* Резервує місце під скрол, щоб контент не смикався */
+    scrollbar-gutter: stable;
 }
 
 body {

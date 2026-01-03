@@ -1,4 +1,37 @@
 .mobile-menu {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        cursor: pointer;
+        z-index: 30; // Менше ніж у __nav (31)
+
+        /* ПАРАМЕТРИ З FIGMA */
+        background-color: rgba(137, 161, 255, 0.26); // #89A1FF при 26%
+        -webkit-backdrop-filter: blur(8px); // Blur 24
+        backdrop-filter: blur(8px);
+
+        /* Анімація появи */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $duration $timing-function, visibility $duration $timing-function;
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__nav {
+        // ... ваш код залишається без змін ...
+        z-index: 31; // Вище ніж оверлей
+        
+        // Порада: додайте SafeArea для padding
+        padding-top: calc(40px + env(safe-area-inset-top));
+    }
+
     &__nav {
         position: fixed;
         top: 0;
@@ -7,11 +40,12 @@
         min-height: 550px;
         padding: 40px 20px;
         background-color: $color-mobmenu-bg;
+        border-radius: 0 0 32px 32px;
         display: flex;
         flex-direction: column;
         align-items: center;
         z-index: 31;
-        transform: translateX(100%);
+        transform: translateY(-101%);
         transition: $duration $timing-function;
 
         overflow-y: auto;
@@ -27,7 +61,7 @@
     }
     
     &__nav.is-open {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 
     // &__logo {
