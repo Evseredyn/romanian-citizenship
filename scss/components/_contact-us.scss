@@ -1,0 +1,106 @@
+.contact-us {
+    position: relative;
+    z-index: 2;
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        padding: 40px 16px 16px;
+        background-color: $color-white-bg;
+        border-radius: 24px;
+        // Додайте це для кращого візуального ефекту накладання
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        max-width: 150px;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 0.87;
+        letter-spacing: 0.02em;
+        color: $color-black;
+    }
+
+    &__text {
+        margin-bottom: 32px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        color: $color-secondary-title;
+    }
+
+    &__text.bold {
+        font-weight: 600;
+    }
+
+    &-form {
+        &__mob {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            @include mq(desktop) {
+                display: none;
+            }
+        }
+        &__field {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            @include mq(desktop) {
+                width: 380px;
+            }
+        }
+        &__label {
+            padding: 4px 16px;
+            // display: block;
+            font-size: 14px;
+            line-height: 1.65;
+            letter-spacing: 0.02em;
+            color: $color-secondary-title;
+            font-weight: 400;
+
+            @include mq(desktop) {
+                font-size: 16px;
+            }
+        }
+        &__input,
+        &__comment {
+            width: 100%;
+            padding: 10px;
+            height: 58px;
+            border: 1px solid $color-label;
+            font-size: 16px;
+            line-height: 1.65;
+            border-radius: 16px;
+            font-weight: 400;
+            color: $color-label;
+            box-sizing: border-box;
+        }
+
+        &__input:focus,
+        &__comment:focus {
+            outline: none;
+            // box-shadow: 0 0 0 3px rgba(185, 142, 109, 0.4);
+        }
+
+        &__submit-btn {
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 16px 32px;
+            font-size: 14px;
+            line-height: 1.7;
+            font-weight: 500;
+            color: $color-white;
+            background-color: $color-akcent;
+            text-align: center;
+            border-radius: 16px;
+        }
+    }
+}
