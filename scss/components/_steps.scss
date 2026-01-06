@@ -1,0 +1,94 @@
+.steps {
+    &__container {
+        overflow: hidden; 
+        width: 100%;
+        // Залишаємо тільки вертикальні падінги для тіней
+        padding: 40px 16px; 
+
+        @include mq(tablet) {
+            overflow: visible;
+            // Повертаємо падінги контейнера на десктопі, якщо потрібно
+            // padding: 0 16px; 
+        }
+    }
+
+    &__pre-title {
+        margin-bottom: 8px;
+        max-width: 180px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        color: $color-akcent;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        color: $color-black;
+    }
+
+    &__list {
+        margin: 0;
+        // margin-left: -16px;
+        padding: 0;
+        display: flex; // Для Swiper на мобільці
+        // gap: 12px;
+        box-sizing: border-box;
+        
+        @include mq(tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); // 3 колонки
+            gap: 24px;
+            // list-style: none;
+            // padding: 0;
+        }
+    }
+
+    &__item {
+        width: 268px;
+        flex-shrink: 0;
+        height: auto; // Для однакової висоти карток у Swiper
+        
+        @include mq(tablet) {
+            &--wide {
+                width: 100%;
+                grid-column: 1 / -1; // 7-й крок на всю ширину
+            }
+        }
+    }
+
+    &__tab {
+        height: 100%;
+        min-height: 156px;
+        padding: 24px;
+        background: $color-white;
+        border-radius: 16px;
+        box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        
+        @include mq(tablet) {
+            &--wide {
+                padding: 40px 320px 40px 160px;
+            }
+        }    
+    }
+
+    &__number {
+        font-size: 32px;
+        font-weight: 700;
+        color: $color-akcent;
+        opacity: 0.8; // Легкий акцент на номері
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $color-black;
+    }
+}

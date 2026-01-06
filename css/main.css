@@ -1067,6 +1067,95 @@ nav li:hover > .site-subnav__list,
   background-repeat: no-repeat;
 }
 
+.steps__container {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 16px;
+}
+@media screen and (min-width: 768px) {
+  .steps__container {
+    overflow: visible;
+  }
+}
+.steps__pre-title {
+  margin-bottom: 8px;
+  max-width: 180px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: #4065F6;
+}
+.steps__title {
+  margin-bottom: 24px;
+  font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.steps__list {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .steps__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+.steps__item {
+  width: 268px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  .steps__item--wide {
+    width: 100%;
+    grid-column: 1/-1;
+  }
+}
+.steps__tab {
+  height: 100%;
+  min-height: 156px;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
+          box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .steps__tab--wide {
+    padding: 40px 320px 40px 160px;
+  }
+}
+.steps__number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4065F6;
+  opacity: 0.8;
+}
+.steps__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+}
+
 .reviews__slider {
   position: relative;
   overflow: hidden;
@@ -1182,6 +1271,14 @@ nav li:hover > .site-subnav__list,
           align-items: center;
   gap: 16px;
 }
+.reviews__name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .contact-us {
   position: relative;
   z-index: 2;
