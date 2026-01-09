@@ -37,6 +37,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        &.transparent {
+            background: linear-gradient(
+                130deg, 
+                rgba(255, 255, 255, 1) 0%, 
+                rgba(255, 255, 255, 0.59) 100%
+            );
+            
+            // Цей ефект додає справжньої "скляності" (розмиття фону)
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); // Для підтримки Safari
+        }
     }
 
     &__thumb {
