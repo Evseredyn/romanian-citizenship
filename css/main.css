@@ -1334,9 +1334,6 @@ nav li:hover > .site-subnav__list,
   gap: 8px;
   margin-bottom: 32px;
 }
-.contact-us__item {
-  margin-left: 24px;
-}
 .contact-us__link {
   font-size: 14px;
   font-weight: 400;
