@@ -20,7 +20,20 @@
     background-position: center bottom;
     background-size: cover;
     background-color: #C4C4C4;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-hero-bg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-home-hero-bg.jpg);
+
+    &.reviews {
+        min-height: 390px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
+        
+        &>div>.hero__heading {
+            max-width: 300px;
+        }
+        
+        &>div>.hero__text {
+            margin-bottom: 0;
+        }
+    }
 
     &__heading {
         // font-size: 32px;

@@ -1,9 +1,14 @@
 .footer {
-        position: relative;
-        margin-top: -40px;
-        padding: 80px 30px 40px;
-        z-index: 1;
-        background-color: $color-akcent;
+    position: relative;
+    margin-top: -40px;
+    padding: 80px 30px 40px;
+    z-index: 1;
+    background-color: $color-akcent;
+
+    &--black {
+        margin-top: 0;
+        background-color: $color-black;
+    }
 
     &__flex {
         display: flex;
@@ -48,57 +53,127 @@
 
     }
 
-    &__socials {
-        position: relative; // Обов'язково для ::after
-        display: block;
-        margin-top: 16px;
-        width: 32px;
-        height: 32px;
+    // &__socials {
+    //     position: relative; // Обов'язково для ::after
+    //     display: block;
+    //     margin-top: 16px;
+    //     width: 32px;
+    //     height: 32px;
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+        
+    //     // Створюємо карту: "aria-label": "назва_файлу"
+    //     $social-icons: (
+    //         "Instagram": "instagram",
+    //         "Facebook": "facebook",
+    //         "Youtube": "youtube",
+    //         "Linkedin": "linkedin",
+    //         "Telegram": "telegram",
+    //         "Whatsapp": "whatsapp"
+    //     );
+
+    //     // Перебираємо карту
+    //     @each $label, $file in $social-icons {
+    //         &[aria-label="#{$label}"] {
+    //             background-image: url('../images/icons/#{$file}.svg');
+
+    //             &::after {
+    //                 content: '';
+    //                 position: absolute;
+    //                 top: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 background-image: url('../images/icons/#{$file}-hover.svg');
+    //                 background-size: contain;
+    //                 background-repeat: no-repeat;
+    //                 background-position: center;
+    //                 opacity: 0;
+    //                 transition: opacity $duration $timing-function;
+    //             }
+    //         }
+    //     }
+        
+
+    //     // Загальний ховер для всіх
+    //     &:hover,
+    //     &:focus {
+    //         &::after {
+    //             opacity: 1;
+    //         }
+    //     }
+    // }
+// Створюємо шаблон спільних стилів
+%social-base {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        
-        // Створюємо карту: "aria-label": "назва_файлу"
-        $social-icons: (
-            "Instagram": "instagram",
-            "Facebook": "facebook",
-            "Youtube": "youtube",
-            "Linkedin": "linkedin",
-            "Telegram": "telegram",
-            "Whatsapp": "whatsapp"
-        );
+        opacity: 0;
+        transition: opacity $duration $timing-function;
+    }
 
-        // Перебираємо карту
-        @each $label, $file in $social-icons {
+    &:hover,
+    &:focus {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+// Карта назв іконок
+$icons: (
+    "Instagram": "instagram",
+    "Facebook": "facebook",
+    "Youtube": "youtube",
+    "Linkedin": "linkedin",
+    "Telegram": "telegram",
+    "Whatsapp": "whatsapp"
+);
+
+.footer {
+    &__socials {
+        @extend %social-base; // Копіюємо спільні стилі
+
+        @each $label, $file in $icons {
             &[aria-label="#{$label}"] {
                 background-image: url('../images/icons/#{$file}.svg');
-
                 &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
                     background-image: url('../images/icons/#{$file}-hover.svg');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    opacity: 0;
-                    transition: opacity $duration $timing-function;
                 }
             }
         }
+        
+        // Модифікатор для чорних іконок
+        &--black {
+            @extend %social-base; // Копіюємо ті ж самі розміри та афтери
 
-        // Загальний ховер для всіх
-        &:hover,
-        &:focus {
-            &::after {
-                opacity: 1;
+            @each $label, $file in $icons {
+                &[aria-label="#{$label}"] {
+                    background-image: url('../images/icons/#{$file}-black.svg');
+                    &::after {
+                        background-image: url('../images/icons/#{$file}-hover.svg');
+                    }
+                }
             }
         }
     }
-
+}
     &-links {
 
         &__title {
