@@ -1,0 +1,126 @@
+.stories {
+
+
+    &__pre-title {
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        color: $color-akcent;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        max-width: 260px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 42px;
+            max-width: 400px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    &__name {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: $color-black;
+    }
+
+    &__person {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: $color-tab-text;
+    }
+
+    &__description {
+        position: relative;
+        margin-bottom: 16px;
+        padding-top: 14px;
+        min-height: 410px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        color: $color-secondary-title;
+    }
+
+    &__description::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 94px;
+        height: 74px;
+        background-image: url("../images/decor/quotes.svg"); 
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 215px;
+            background-color: $color-pale-blue-bg;
+            border-radius: 24px;
+            z-index: -1;
+        }
+    }
+    &__img {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 24px;
+    }
+
+    &__img::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 215px;
+        border-radius: 24px;
+        background-color: $color-current;
+        z-index: -1;
+    }
+
+    &__slider {
+        padding-bottom: 40px; // Місце для крапок знизу
+    }
+
+    &__pagination {
+        bottom: 0 !important; // Опускаємо точки нижче
+        
+        .swiper-pagination-bullet {
+            background: $color-akcent; // Колір неактивної точки
+            opacity: 0.5;
+            
+            &-active {
+                opacity: 1;
+                background: $color-akcent; // Колір активної точки
+            }
+        }
+    }
+}

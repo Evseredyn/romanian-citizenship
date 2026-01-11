@@ -1,0 +1,38 @@
+.consultation {
+    background-color: $color-akcent;
+    &__title {
+        margin: 0 auto 32px;
+        max-width: 280px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-white;
+    }
+
+    &__text {
+        margin: 0 auto 48px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-white;
+    }
+
+    &__link {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 32px;
+        font-size: 14px;
+        line-height: 1.7;
+        font-weight: 500;
+        color: $color-black;
+        background-color: $color-white;
+        text-align: center;
+        border-radius: 16px;
+    }
+}

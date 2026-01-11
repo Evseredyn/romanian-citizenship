@@ -343,6 +343,10 @@ p {
   color: #6C9FFF;
 }
 
+.yellow {
+  color: #FFCC00;
+}
+
 .header {
   /* Ваші стандартні відступи (наприклад, для десктопа) */
   --base-padding-top: 20px;
@@ -910,9 +914,6 @@ nav li:hover > .site-subnav__list,
   color: #FFFFFF;
 }
 
-.pricing {
-  padding: 40px 0;
-}
 .pricing__pre-title {
   margin-bottom: 8px;
   max-width: 150px;
@@ -1774,7 +1775,6 @@ nav li:hover > .site-subnav__list,
 .company__container {
   overflow: hidden;
   width: 100%;
-  padding: 40px 16px;
 }
 @media screen and (min-width: 768px) {
   .company__container {
@@ -1813,7 +1813,7 @@ nav li:hover > .site-subnav__list,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
+  gap: clamp(0.5rem, -0.5rem + 5vw, 1rem);
   margin-bottom: 32px;
 }
 .company__inner-numb {
@@ -1823,7 +1823,7 @@ nav li:hover > .site-subnav__list,
   color: rgba(0, 0, 0, 0.8);
 }
 .company__inner-text {
-  font-size: 16px;
+  font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1rem);
   font-weight: 400;
   line-height: 1.25;
   color: rgba(0, 0, 0, 0.8);
@@ -1888,4 +1888,155 @@ nav li:hover > .site-subnav__list,
   font-size: 14px;
   line-height: 1.5;
   color: #000000;
+}
+
+.consultation {
+  background-color: #4065f6;
+}
+.consultation__title {
+  margin: 0 auto 32px;
+  max-width: 280px;
+  font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #FFFFFF;
+}
+.consultation__text {
+  margin: 0 auto 48px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #FFFFFF;
+}
+.consultation__link {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 32px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 500;
+  color: #000000;
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.stories__pre-title {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: #4065f6;
+}
+.stories__title {
+  margin-bottom: 24px;
+  max-width: 260px;
+  font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .stories__title {
+    margin-bottom: 42px;
+    max-width: 400px;
+  }
+}
+.stories__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.stories__name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.stories__person {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.3);
+}
+.stories__description {
+  position: relative;
+  margin-bottom: 16px;
+  padding-top: 14px;
+  min-height: 410px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.stories__description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 94px;
+  height: 74px;
+  background-image: url("../images/decor/quotes.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.stories__img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.stories__img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 215px;
+  background-color: #D1DAFF;
+  border-radius: 24px;
+  z-index: -1;
+}
+.stories__img {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 24px;
+}
+.stories__img::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 215px;
+  border-radius: 24px;
+  background-color: #6C9FFF;
+  z-index: -1;
+}
+.stories__slider {
+  padding-bottom: 40px;
+}
+.stories__pagination {
+  bottom: 0 !important;
+}
+.stories__pagination .swiper-pagination-bullet {
+  background: #4065f6;
+  opacity: 0.5;
+}
+.stories__pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #4065f6;
 }/*# sourceMappingURL=main.css.map */

@@ -74,7 +74,7 @@
             </div>
         </section>
     <!-- Pricing -->
-        <section class="pricing">
+        <section class="pricing section">
             <div class="container">
                 <p class="pricing__pre-title">Выбирай то, что подойдет именно тебе</p>
                 <h2 class="pricing__title">Наши <span class="current">возможности</span></h2>
@@ -136,8 +136,8 @@
                 </ul>
 
                 <p class="pricing__text">Выберите пакет сопровождения, который лучше всего подходит вашему уровню задач и вовлечённости. Мы берём на себя весь процесс подготовки, подачи и сопровождения дела в Министерстве юстиции Румынии, обеспечивая прозрачность, точность и соблюдение всех юридических требований. Вам остаётся только пройти один визит для подтверждения личности — всё остальное мы делаем за вас.</p>
-                <div class="pricing__actions">
-                    <a href="" class="pricing__link">Узнать подробнее</a>
+                <div class="pricing__action">
+                    <a href="" class="pricing__link" aria-label="Кнопка Узнать подробнее" target="_blank" rel="noopener noreferrer">Узнать подробнее</a>
                 </div>
             </div>
         </section>
@@ -198,7 +198,8 @@
                 <p class="reviews__pre-title">О нас говорят наши дела</p>
                 <h2 class="reviews__title"><span class="current">Отзывы</span> наших клиентов</h2>
                 <ul class="reviews__list list swiper-wrapper">
-                    <li class="reviews__item swiper-slide"> <article class="reviews__client">
+                    <li class="reviews__item swiper-slide">
+                        <article class="reviews__client">
                             <p class="reviews__description">Я очень благодарен команде за помощь в получении румынского гражданства! Сначала процесс казался мне сложным и запутанным, но специалисты компании сопровождали меня на каждом этапе. Они взяли на себя все вопросы с документами и объяснили все нюансы, благодаря чему я быстро и без проблем получил гражданство. Рекомендую всем, кто хочет пройти этот путь без стресса и потери времени!
                             </p>
                             <div class="reviews__card">
@@ -207,7 +208,8 @@
                             </div>
                         </article>
                     </li>
-                    <li class="reviews__item swiper-slide"> <article class="reviews__client">
+                    <li class="reviews__item swiper-slide">
+                        <article class="reviews__client">
                             <p class="reviews__description">Я очень благодарен команде за помощь в получении румынского гражданства! Сначала процесс казался мне сложным и запутанным, но специалисты компании сопровождали меня на каждом этапе. Они взяли на себя все вопросы с документами и объяснили все нюансы, благодаря чему я быстро и без проблем получил гражданство. Рекомендую всем, кто хочет пройти этот путь без стресса и потери времени!
                             </p>
                             <div class="reviews__card">
@@ -216,7 +218,8 @@
                             </div>
                         </article>
                     </li>
-                    <li class="reviews__item swiper-slide"> <article class="reviews__client">
+                    <li class="reviews__item swiper-slide">
+                        <article class="reviews__client">
                             <p class="reviews__description">Я очень благодарен команде за помощь в получении румынского гражданства! Сначала процесс казался мне сложным и запутанным, но специалисты компании сопровождали меня на каждом этапе. Они взяли на себя все вопросы с документами и объяснили все нюансы, благодаря чему я быстро и без проблем получил гражданство. Рекомендую всем, кто хочет пройти этот путь без стресса и потери времени!
                             </p>
                             <div class="reviews__card">
@@ -260,7 +263,7 @@
                         </div>
                         <div class="contact-us-form__field">
                             <label class="contact-us-form__label" for="phone-number">Ваш вопрос</label>
-                            <textarea class="contact-us-form__comment" id="connect" placeholder="Чем мы можем помочь?" rows="6" required></textarea>
+                            <textarea class="contact-us-form__comment" id="connect" name="message" placeholder="Чем мы можем помочь?" rows="4" required></textarea>
                         </div>
                         <button class="contact-us-form__submit-btn" type="submit">Записаться на консультацию</button>
                     </form>
@@ -275,7 +278,10 @@
                 <a class="footer-info__link link" href="./index.html">
                     <img class="footer-info__logo" src="./images/icons/logo-mob.svg" alt="Sokhor Global - на главную" width="108" height="60">
                 </a>
-                <div class="footer-info__copyright">Гражданство Румынии &copy; <span id="current-year">2026</span> Все права защищены</div>
+                <div class="footer-info__copyright">
+                    Гражданство Румынии &copy; 2025<span id="year-range"></span> Все права защищены
+                </div>
+                <!-- <div class="footer-info__copyright">Гражданство Румынии &copy; <span id="current-year">2026</span> Все права защищены</div> -->
                 <ul class="footer__list list">
                     <li class="footer__item"><a class="footer__socials" aria-label="Instagram" target="_blank" rel="noopener noreferrer" href="#"></a></li>
                     <li class="footer__item"><a class="footer__socials" aria-label="Facebook" target="_blank" rel="noopener noreferrer" href="#"></a></li>
