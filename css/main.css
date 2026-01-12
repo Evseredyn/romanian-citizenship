@@ -832,6 +832,32 @@ nav li:hover > .site-subnav__list,
 .hero.faq > div > .hero__text {
   margin-bottom: 0;
 }
+.hero.procedure {
+  min-height: 390px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-procedure-hero-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-procedure-hero-bg.jpg);
+}
+.hero.procedure > div > .hero__heading {
+  max-width: 260px;
+}
+.hero.procedure > div > .hero__text {
+  position: relative;
+  margin-left: 40px;
+  margin-bottom: 0;
+}
+.hero.procedure > div > .hero__text::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background-image: url("../images/icons/decor-icon-3.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .hero__heading {
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
   font-weight: 500;
@@ -1902,7 +1928,31 @@ nav li:hover > .site-subnav__list,
 }
 
 .consultation {
+  position: relative;
+  overflow: hidden;
+  min-height: 390px;
   background-color: #4065f6;
+}
+.consultation::before, .consultation::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+.consultation::before {
+  background-image: url("../images/decor/arc-5.svg");
+  width: 460px;
+  height: 1070px;
+  top: -2%;
+  left: 0;
+}
+.consultation::after {
+  background-image: url("../images/decor/arc-4.svg");
+  width: 350px;
+  height: 440px;
+  bottom: -10%;
+  right: 0;
 }
 .consultation__title {
   margin: 0 auto 32px;
@@ -1916,6 +1966,7 @@ nav li:hover > .site-subnav__list,
 }
 .consultation__text {
   margin: 0 auto 48px;
+  max-width: 90%;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.65;
@@ -1929,7 +1980,7 @@ nav li:hover > .site-subnav__list,
   margin-left: auto;
   margin-right: auto;
   padding: 12px 32px;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 0.5rem + 1.25vw, 0.875rem);
   line-height: 1.7;
   font-weight: 500;
   color: #000000;
@@ -2130,10 +2181,10 @@ nav li:hover > .site-subnav__list,
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .accordion__icon::before {
   width: 100%;

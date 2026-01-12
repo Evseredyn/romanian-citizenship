@@ -48,6 +48,35 @@
         }
     }
 
+    &.procedure {
+        min-height: 390px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-procedure-hero-bg.jpg);
+        
+        &>div>.hero__heading {
+            max-width: 260px;
+        }
+        
+        &>div>.hero__text {
+            position: relative;
+            margin-left: 40px;
+            margin-bottom: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -40px;
+                // top: 2px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 32px;
+                height: 32px;
+                background-image: url('../images/icons/decor-icon-3.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
     &__heading {
         // font-size: 32px;
         font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
