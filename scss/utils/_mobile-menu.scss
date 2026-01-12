@@ -78,7 +78,7 @@
 
     &__item {
     
-        &:nth-child(2) {
+        &:nth-child(3) {
 
             & > .mobile-menu__link {
                 &::after {
@@ -126,7 +126,7 @@
     &__close-btn {
         position: absolute;
         top: 50px;
-        right: 40px;
+        right: 45px;
         display: flex;
         align-items: center;
         justify-content: center;

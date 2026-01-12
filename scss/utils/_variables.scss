@@ -12,6 +12,7 @@ $color-muted-text: rgb(255, 255, 255, 0.8);
 $color-tab-text: rgb(0, 0, 0, 0.3);
 $color-yellow-text: #FFCC00;
 $color-review-text: rgb(0, 0, 0, 0.7);
+$color-accordion-text: #363049;
 $color-bg:#F7F7F7;
 $color-white-bg: #FFFFFF;
 $color-pale-blue-bg: #D1DAFF;
@@ -19,6 +20,8 @@ $color-footer-title: rgb(255, 255, 255, 0.3);
 $color-mobmenu-bg: #F6F6F6;
 $color-btn-hover: #CF9F77;
 $color-border: #C8C8C8;
+// Shadow
+$shadow:  0px 20px 20px -10px rgba(149, 149, 149, 0.25);
 // Animations
 $duration: 250ms;
 $timing-function: cubic-bezier(0.4,0,0.2,1);

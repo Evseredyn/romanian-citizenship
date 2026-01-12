@@ -1,0 +1,123 @@
+.faq {
+
+    &__pre-title {
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        text-align: center;
+        color: $color-akcent;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-black;
+    }
+    &__subtitle {
+        margin-bottom: 24px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-secondary-title;
+    }
+}
+
+.accordion {
+    display: grid;
+    grid-template-columns: 1fr; // Мобільні: один стовпчик
+    gap: 16px;
+
+    @include mq(desktop) {
+        grid-template-columns: 1fr 1fr; // Десктоп: два стовпчика
+        grid-auto-flow: row; // Елементи йдуть 1, 2 (в рядок), або якщо хочеш 1-5, 6-10, то краще просто Grid
+        align-items: start;
+    }
+
+    &__item {
+        padding: 24px 16px;
+        background-color: $color-white-bg;
+        box-shadow: $shadow;
+        border-radius: 24px;
+        // border-bottom: 1px solid $color-border; // Або інший розділювач
+    }
+
+    &__toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        // padding: 16px 0;
+        cursor: pointer;
+        background: none;
+        border: none;
+        text-align: left;
+        gap: 16px; // Відступ контенту від лівого краю (де іконка)
+    }
+
+    &__icon {
+        position: relative;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        
+        // Малюємо ПЛЮС через псевдоелементи
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            background-color: $color-akcent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease;
+        }
+
+        // Горизонтальна лінія (завжди є)
+        &::before {
+            width: 100%;
+            height: 2px;
+        }
+
+        // Вертикальна лінія (зникає при відкритті)
+        &::after {
+            width: 2px;
+            height: 100%;
+        }
+    }
+
+    // Логіка перетворення на МІНУС
+    &__toggle[aria-expanded="true"] {
+        .accordion__icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+            opacity: 0; // Ховаємо вертикальну паличку
+        }
+    }
+
+    &__question {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        line-height: 1.65;
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $duration $timing-function;
+    }
+
+    &__text {
+        padding: 16px 0 0 42px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.65;
+        color: $color-accordion-text;
+    }
+}
