@@ -536,7 +536,7 @@ section[id], :target, h2[id], div[id] {
 .mobile-menu__close-btn {
   position: absolute;
   top: 50px;
-  right: 45px;
+  right: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
