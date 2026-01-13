@@ -1933,12 +1933,17 @@ nav li:hover > .site-subnav__list,
   min-height: 390px;
   background-color: #4065f6;
 }
+.consultation__content {
+  position: relative;
+  z-index: 2;
+}
 .consultation::before, .consultation::after {
   content: "";
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 0;
+  opacity: 0.8;
+  z-index: 1;
 }
 .consultation::before {
   background-image: url("../images/decor/arc-5.svg");
