@@ -20,10 +20,12 @@ body {
 }
 
 .container {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+    z-index: 2;
 
     @include mq(mobile) {
         max-width: 480px;

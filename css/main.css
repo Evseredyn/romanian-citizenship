@@ -257,10 +257,12 @@ body {
 }
 
 .container {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
+  z-index: 2;
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -1309,12 +1311,29 @@ nav li:hover > .site-subnav__list,
   gap: 28px;
 }
 .reviews__description {
+  position: relative;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.65;
   letter-spacing: 0.02em;
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
+}
+.reviews__description::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/decor/quotes.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
 }
 .reviews__card {
   display: -webkit-box;
@@ -1928,14 +1947,9 @@ nav li:hover > .site-subnav__list,
 }
 
 .consultation {
-  position: relative;
   overflow: hidden;
   min-height: 390px;
   background-color: #4065f6;
-}
-.consultation__content {
-  position: relative;
-  z-index: 2;
 }
 .consultation::before, .consultation::after {
   content: "";
@@ -1951,6 +1965,7 @@ nav li:hover > .site-subnav__list,
   height: 1070px;
   top: -2%;
   left: 0;
+  pointer-events: none;
 }
 .consultation::after {
   background-image: url("../images/decor/arc-4.svg");
@@ -1958,6 +1973,7 @@ nav li:hover > .site-subnav__list,
   height: 440px;
   bottom: -10%;
   right: 0;
+  pointer-events: none;
 }
 .consultation__title {
   margin: 0 auto 32px;
@@ -1992,6 +2008,8 @@ nav li:hover > .site-subnav__list,
   background-color: #FFFFFF;
   text-align: center;
   border-radius: 16px;
+  -webkit-box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
+          box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
 }
 
 .stories__pre-title {

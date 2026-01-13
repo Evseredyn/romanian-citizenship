@@ -1,13 +1,12 @@
 .consultation {
-    position: relative;
     overflow: hidden;
     min-height: 390px;
     background-color: $color-akcent;
 
-    &__content {
-        position: relative;
-        z-index: 2;
-    }
+    // &__content {
+    //     position: relative;
+    //     z-index: 2;
+    // }
 
     &::before, &::after {
         content: "";
@@ -24,6 +23,7 @@
         height: 1070px;
         top: -2%;
         left: 0;
+        pointer-events: none;
     }
 
     &::after {
@@ -32,7 +32,9 @@
         height: 440px;
         bottom: -10%;
         right: 0;
+        pointer-events: none;
     }
+    
     &__title {
         margin: 0 auto 32px;
         max-width: 280px;
@@ -68,5 +70,6 @@
         background-color: $color-white-bg;
         text-align: center;
         border-radius: 16px;
+        box-shadow: $shadow;
     }
 }
