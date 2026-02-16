@@ -14,8 +14,7 @@
         padding: 40px 16px 16px;
         background-color: $color-white-bg;
         border-radius: 24px;
-        // Додайте це для кращого візуального ефекту накладання
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: $shadow;
         z-index: 2;
     }
 

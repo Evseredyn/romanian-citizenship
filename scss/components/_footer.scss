@@ -1,9 +1,13 @@
 .footer {
     position: relative;
-    margin-top: -40px;
-    padding: 80px 30px 40px;
+    padding: 40px 30px 40px;
     z-index: 1;
     background-color: $color-akcent;
+
+    &-mt {
+        margin-top: -40px;
+        padding-top: 80px;
+    }
 
     &--black {
         margin-top: 0;

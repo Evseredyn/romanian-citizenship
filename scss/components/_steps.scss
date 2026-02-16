@@ -3,7 +3,7 @@
         overflow: hidden; 
         width: 100%;
         // Залишаємо тільки вертикальні падінги для тіней
-        padding: 40px 16px; 
+        // padding: 40px 16px;
 
         @include mq(tablet) {
             overflow: visible;
@@ -86,9 +86,28 @@
         opacity: 0.8; // Легкий акцент на номері
     }
 
+    &__number--compact {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
     &__text {
         font-size: 14px;
         line-height: 1.5;
         color: $color-black;
+    }
+
+    &__accent--line {
+        margin-top: 40px;
+        padding: 40px 30px;
+        border-radius: 16px;
+        background-color: $color-akcent;
+    }
+
+    &__accent--text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 125%;
+        color: $color-muted-text;
     }
 }
