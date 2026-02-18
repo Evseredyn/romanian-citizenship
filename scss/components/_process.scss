@@ -1,5 +1,14 @@
 .process {
 
+    &__container {
+            @include mq(laptop) {
+                display: grid;
+                grid-template-columns: 300px 1fr; // Ліва колонка фіксована, права — гумова
+                gap: 60px;
+                align-items: start;
+            }
+    }
+
     &__pre-title {
         margin-bottom: 8px;
         max-width: 180px;
@@ -8,6 +17,10 @@
         letter-spacing: 0.02em;
         line-height: 1.25;
         color: $color-akcent;
+
+            @include mq(laptop) {
+                grid-column: 1 / 3;
+            }
     }
     
     &__title {
@@ -17,34 +30,169 @@
         line-height: 1.1;
         letter-spacing: 0.02em;
         color: $color-black;
+
+            @include mq(laptop) {
+                grid-column: 1 / 3;
+            }
     }
 
     &__list {
         display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+            position: sticky;
+            top: 0; 
+            z-index: 50;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba($color-black, 0.1);
+            // Щоб таби скролились до країв екрана, ігноруючи падінги контейнера
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            padding: 15px 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include mq(laptop) {
+            flex-direction: column;
+            position: sticky;
+            top: 40px; // Відступ від верху екрана при скролі
+            overflow-x: visible;
+            border-left: 1px solid rgba($color-black, 0.1);
+            padding: 0 0 0 20px;
+            gap: 16px;
+        }
     }
+
     &__item {
+        flex-shrink: 0;
+        background-color: $color-white-bg;
     }
+
     &__btn {
+        position: relative;
+        padding: 8px 4px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $color-secondary-title;
+        background: transparent;
+        border:none;
+        transition: $duration $timing-function;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; // Притискаємо до низу
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $color-akcent;
+            border-radius: 24px;
+            transform: scaleX(0); // За замовчуванням приховано
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        &:hover {
+            color: $color-black;
+        }
+
+        &.active {
+            color: $color-black;
+
+            &::after {
+                transform: scaleX(1); // Показуємо лінію для активної кнопки
+            }
+        }
+    }
+}
+
+.stage {
+
+    &__list {
+        margin-top: 16px;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 25px;
+        min-height: 18px;
+              
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            // top: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-image: url('../images/icons/ticker-bright.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__bullet {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        color: $color-faq-text;
     }
 }
 
 .stages {
 
-    &__list {
-    }
-    &__item {
-    }
     &__title {
+        margin-top: 32px;
+        // margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: $color-black;
     }
-    &__bullet {
-    }
+
     &__description {
+        margin-top: 16px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        color: $color-faq-text;
     }
+
     &__img {
+        margin-top: 16px;
         border-radius: 26px;
     }
+
     &__wrapper {
+        margin-top: 16px;
+        padding: 24px;
+        background-color: $color-white-bg;
+        border-radius: 24px;
     }
     &__wrapper--title {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: $color-black;
     }
 }

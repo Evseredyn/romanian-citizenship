@@ -2425,6 +2425,16 @@ nav li:hover > .site-subnav__list,
 .team__name {
   margin-top: 20px;
 }
+@media screen and (min-width: 1024px) {
+  .process__container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
 .process__pre-title {
   margin-bottom: 8px;
   max-width: 180px;
@@ -2434,6 +2444,11 @@ nav li:hover > .site-subnav__list,
   line-height: 1.25;
   color: #4065f6;
 }
+@media screen and (min-width: 1024px) {
+  .process__pre-title {
+    grid-column: 1/3;
+  }
+}
 .process__title {
   margin-bottom: 24px;
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
@@ -2442,11 +2457,158 @@ nav li:hover > .site-subnav__list,
   letter-spacing: 0.02em;
   color: #000000;
 }
+@media screen and (min-width: 1024px) {
+  .process__title {
+    grid-column: 1/3;
+  }
+}
 .process__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-bottom: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  padding: 15px 20px;
+}
+.process__list::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .process__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: sticky;
+    top: 40px;
+    overflow-x: visible;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 0 0 20px;
+    gap: 16px;
+  }
+}
+.process__item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #FFFFFF;
+}
+.process__btn {
+  position: relative;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.8);
+  background: transparent;
+  border: none;
+  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.process__btn::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #4065f6;
+  border-radius: 24px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+.process__btn:hover {
+  color: #000000;
+}
+.process__btn.active {
+  color: #000000;
+}
+.process__btn.active::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.stage__list {
+  margin-top: 16px;
+}
+.stage__item {
+  position: relative;
+  padding-left: 25px;
+  min-height: 18px;
+}
+.stage__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/icons/ticker-bright.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.stage__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+.stage__bullet {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: #363049;
+}
+
+.stages__title {
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.stages__description {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: #363049;
 }
 .stages__img {
+  margin-top: 16px;
   border-radius: 26px;
+}
+.stages__wrapper {
+  margin-top: 16px;
+  padding: 24px;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+}
+.stages__wrapper--title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #000000;
 }/*# sourceMappingURL=main.css.map */

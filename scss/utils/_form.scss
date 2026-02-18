@@ -1,0 +1,30 @@
+// Приклад того, як стилізувати CF7 ефективно
+.wpcf7 {
+  .wpcf7-form-control {
+    // Всі спільні стилі для інпутів та textarea
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  textarea.wpcf7-form-control {
+    height: 150px;
+    resize: vertical;
+  }
+
+  .wpcf7-submit {
+    // Стилі для кнопки
+    cursor: pointer;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    // ... ваші стилі кнопки
+  }
+}
