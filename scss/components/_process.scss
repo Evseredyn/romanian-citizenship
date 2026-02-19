@@ -44,30 +44,32 @@
     }
 
     &__list {
+        // position: sticky;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        // padding-bottom: 6px;
-        // overflow-x: auto;
+
+        overflow-x: auto;
         scrollbar-width: none;
 
-            border-bottom: 1px solid rgba($color-black, 0.1);
-            // Щоб таби скролились до країв екрана, ігноруючи падінги контейнера
-            width: calc(100% + 40px);
-            // margin-left: -20px;
-            // padding: 15px;
+        border-bottom: 1px solid rgba($color-black, 0.1);
+        // Щоб таби скролились до країв екрана, ігноруючи падінги контейнера
+        // width: calc(100% + 40px);
+        margin-bottom: 32px;
+        padding: 8px 0;
 
         &::-webkit-scrollbar {
             display: none;
         }
 
-        @include mq(tablet) {
+        @include mq(laptop) {
             gap: 16px;
+            margin-bottom: 0;
         }
 
         @include mq(laptop) {
             flex-direction: column;
-            position: sticky;
+            // position: sticky;
             top: 40px; // Відступ від верху екрана при скролі
             overflow-x: visible;
             border-bottom: none;
@@ -78,15 +80,18 @@
     }
 
     &__item {
-        flex-shrink: 0;
-        height: 32px;
-        padding: 6px;
+        // flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // height: 32px;
+        // padding: 6px;
         background-color: $color-white-bg;
     }
 
     &__link {
         position: relative;
-        padding: 8px 0;
+        padding: 8px;
         font-size: 14px;
         font-weight: 600;
         line-height: 1.2;
@@ -168,7 +173,6 @@
 .stages {
 
     &__title {
-        // margin-bottom: 16px;
         font-size: 24px;
         font-weight: 400;
         line-height: 1.25;
@@ -177,6 +181,10 @@
 
         @include mq(laptop) {
             // margin-top: 0;
+        }
+
+        &--inner {
+            margin-top: 32px;
         }
     }
 
@@ -190,8 +198,14 @@
     }
 
     &__item {
-        margin-top: 32px;
-        scroll-margin-top: 130px;
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+        scroll-margin-top: 140px;
+
+        @include mq(tablet) {
+            scroll-margin-top: 110px;
+        }
 
         @include mq(laptop) {
             scroll-margin-top: 20px;
