@@ -11,11 +11,7 @@ body {
    background-color: $color-bg;
 
    @include mq(desktop) {
-   padding-top: 175px;
-   }
-
-    @include mq(monitor) {
-   padding-top: 195px;
+//    padding-top: 75px;
    }
 }
 
@@ -33,6 +29,12 @@ body {
 
     @include mq(tablet) {
         max-width: 768px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include mq(laptop) {
+        max-width: 1024px;
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -124,9 +126,9 @@ p {
     color: $color-akcent;
 }
 
-.current {
-   color: $color-current;
-}
+// .current {
+//    color: $color-current;
+// }
 
 .yellow {
     color: $color-yellow-text;

@@ -2,6 +2,10 @@
     // margin-top: -80px; /* Де 80px — це висота вашого хедера */
     padding-top: 10px; /* Повертаємо внутрішній відступ для контенту */
     padding-top: calc(140px + env(safe-area-inset-top));
+
+    @include mq(laptop) {
+    // padding-top: calc(80px + env(safe-area-inset-top));
+    }
 }
 
 .hero {
@@ -9,8 +13,17 @@
     min-height: 453px;
     padding-bottom: 20px;
 
+    @include mq(tablet) {
+        min-height: 480px;
+        padding-bottom: 40px;
+    }
+
+    @include mq(laptop) {
+        min-height: 580px;
+    }
+
     @include mq(desktop) {
-       max-width: 1600px;
+        min-height: 620px;
     }
  
     margin-left: auto;
@@ -87,25 +100,30 @@
         max-width: 310px;
         margin-bottom: 24px;
     
-         @include mq(tablet) {
+            @include mq(tablet) {
             max-width: 560px;
             font-size: 50px;
-            line-height: 1.28;
-            margin-bottom: 50px;
-         }
+            // line-height: 0.9;
+            }
 
-         @include mq(desktop) {
-            max-width: 800px;
-            font-size: 64px;
-            line-height: 1.25;
-         }
+            @include mq(laptop) {
+            max-width: 860px;
+            font-size: 72px;
+            // line-height: 1.2;
+            }
 
-         @include mq(monitor) {
-            max-width: 1000px;
-            font-size: 80px;
-            line-height: 1.1;
-            margin-bottom: 80px;
-         }
+            @include mq(desktop) {
+            max-width: 960px;
+            font-size: 96px;
+            // line-height: 1.25;
+            }
+
+        //  @include mq(monitor) {
+        //     max-width: 1000px;
+        //     font-size: 80px;
+        //     line-height: 1.1;
+        //     margin-bottom: 80px;
+        //  }
     }
 
     &__text {
@@ -118,15 +136,22 @@
     
         @include mq(tablet) {
            max-width: 560px;
-           font-size: 50px;
+           font-size: 16px;
            line-height: 1.28;
-           margin-bottom: 50px;
+            margin-bottom: 42px;
+        }
+
+        @include mq(laptop) {
+           max-width: 650px;
+           font-size: 20px;
+           line-height: 1.25;
         }
 
         @include mq(desktop) {
            max-width: 800px;
-           font-size: 64px;
+           font-size: 24px;
            line-height: 1.25;
+            margin-bottom: 42px;
         }
 
         @include mq(monitor) {
