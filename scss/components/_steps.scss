@@ -67,8 +67,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr); // 3 колонки
             gap: 24px;
-            // list-style: none;
-            // padding: 0;
+// ВАЖЛИВО: скидаємо стилі Swiper, які він додає інлайново
+            transform: none !important; 
+            width: 100% !important;
         }
     }
 
@@ -78,6 +79,7 @@
         height: auto; // Для однакової висоти карток у Swiper
         
         @include mq(tablet) {
+            width: 100%;
             &--wide {
                 width: 100%;
                 grid-column: 1 / -1; // 7-й крок на всю ширину
@@ -95,12 +97,71 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        
-        @include mq(tablet) {
-            &--wide {
-                padding: 40px 320px 40px 160px;
+                
+        &--wide {
+                    
+            @include mq(tablet) {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                gap: 24px;
+                padding: 30px 200px 30px 140px;
+                overflow: visible;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 90px;
+                    height: 90px;
+                    background-image: url('../images/decor/flag_of_europe.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    pointer-events: none;
+
+                    @include mq(laptop) {
+                        // left: -36px;
+                        // width: 20px;
+                        // height: 20px;
+                    }
+
+                    @include mq(desktop) {
+                        // left: -40px;
+                        // width: 24px;
+                        // height: 24px;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 180px;
+                    height: 180px;
+                    background-image: url('../images/decor/passport_of_rumuniia.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    pointer-events: none;
+
+                    @include mq(laptop) {
+                        right: 10px;
+                    }
+
+                    @include mq(desktop) {
+                    }
+                }
             }
-        }    
+
+            @include mq(laptop) {
+                padding: 40px 280px 40px 160px;
+            }
+        }
     }
 
     &__number {
@@ -119,6 +180,10 @@
         font-size: 14px;
         line-height: 1.5;
         color: $color-black;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }  
     }
 
     &__accent--line {
@@ -141,7 +206,7 @@
         position: relative;
         padding-bottom: 50px; // Місце для підказки
 
-        @media (max-width: 768px) {
+        @include mq(mobile-only) {
             // ТЕКСТ "Листайте"
             &::after {
                 content: "Листайте";

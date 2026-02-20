@@ -1627,6 +1627,9 @@ nav li:hover > .site-subnav__list,
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    -webkit-transform: none !important;
+            transform: none !important;
+    width: 100% !important;
   }
 }
 .steps__item {
@@ -1636,6 +1639,9 @@ nav li:hover > .site-subnav__list,
   height: auto;
 }
 @media screen and (min-width: 768px) {
+  .steps__item {
+    width: 100%;
+  }
   .steps__item--wide {
     width: 100%;
     grid-column: 1/-1;
@@ -1660,7 +1666,57 @@ nav li:hover > .site-subnav__list,
 }
 @media screen and (min-width: 768px) {
   .steps__tab--wide {
-    padding: 40px 320px 40px 160px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 24px;
+    padding: 30px 200px 30px 140px;
+    overflow: visible;
+  }
+  .steps__tab--wide::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
+    background-image: url("../images/decor/flag_of_europe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+  .steps__tab--wide::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    background-image: url("../images/decor/passport_of_rumuniia.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1024px) {
+  .steps__tab--wide::after {
+    right: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .steps__tab--wide {
+    padding: 40px 280px 40px 160px;
   }
 }
 .steps__number {
@@ -1677,6 +1733,11 @@ nav li:hover > .site-subnav__list,
   font-size: 14px;
   line-height: 1.5;
   color: #000000;
+}
+@media screen and (min-width: 1024px) {
+  .steps__text {
+    font-size: 16px;
+  }
 }
 .steps__accent--line {
   margin-top: 20px;
@@ -1695,7 +1756,7 @@ nav li:hover > .site-subnav__list,
   position: relative;
   padding-bottom: 50px;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .steps__list::after {
     content: "Листайте";
     position: absolute;
