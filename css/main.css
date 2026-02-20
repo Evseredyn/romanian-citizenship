@@ -290,6 +290,11 @@ body {
 .section {
   padding: 40px 0;
 }
+@media screen and (min-width: 1920px) {
+  .section {
+    padding: 60px 0;
+  }
+}
 
 .link {
   text-decoration: none;
@@ -339,6 +344,10 @@ p {
 
 .accent {
   color: #4065f6;
+}
+
+.current {
+  color: #6C9FFF;
 }
 
 .yellow {
@@ -654,9 +663,12 @@ nav li:hover > .site-subnav__list,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
-.header__logo {
-  fill: currentColor;
+@media screen and (min-width: 1024px) {
+  .header__thumb {
+    width: auto;
+  }
 }
 @media screen and (min-width: 768px) {
   .header__logo {
@@ -783,12 +795,22 @@ nav li:hover > .site-subnav__list,
   -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media screen and (min-width: 1440px) {
+  .site-nav__link {
+    font-size: 18px;
+  }
+}
 .site-nav__link:hover, .site-nav__link:focus {
   opacity: 0.9;
 }
 .site-nav__link.active {
   font-size: 16px;
   line-height: 1.7;
+}
+@media screen and (min-width: 1440px) {
+  .site-nav__link.active {
+    font-size: 20px;
+  }
 }
 
 .site-subnav__list {
@@ -834,6 +856,17 @@ nav li:hover > .site-subnav__list,
   padding-top: 10px; /* Повертаємо внутрішній відступ для контенту */
   padding-top: calc(140px + env(safe-area-inset-top));
 }
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: calc(160px + env(safe-area-inset-top));
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding-top: calc(200px + env(safe-area-inset-top));
+  }
+}
+
 .hero {
   width: 100%;
   min-height: 453px;
@@ -867,38 +900,192 @@ nav li:hover > .site-subnav__list,
 }
 .hero.reviews {
   min-height: 390px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero.reviews {
+    min-height: 480px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero.reviews {
+    min-height: 580px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.reviews {
+    min-height: 620px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.reviews {
+    padding-bottom: 60px;
+  }
+}
+.hero.reviews {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-reviews-hero-bg.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
 }
-.hero.reviews > div > .hero__heading {
-  max-width: 300px;
+@media screen and (min-width: 1024px) {
+  .hero.reviews > div > .hero__heading {
+    margin-bottom: 50px;
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.reviews > div > .hero__heading {
+    max-width: 840px;
+  }
 }
 .hero.reviews > div > .hero__text {
   margin-bottom: 0;
 }
 .hero.faq {
   min-height: 390px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero.faq {
+    min-height: 360px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero.faq {
+    min-height: 480px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.faq {
+    min-height: 520px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.faq {
+    padding-bottom: 60px;
+  }
+}
+.hero.faq {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-reviews-hero-bg.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
 }
-.hero.faq > div > .hero__heading {
-  max-width: 260px;
+@media screen and (min-width: 1024px) {
+  .hero.faq > div > .hero__heading {
+    margin-bottom: 50px;
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.faq > div > .hero__heading {
+    max-width: 760px;
+  }
 }
 .hero.faq > div > .hero__text {
   margin-bottom: 0;
 }
+.hero.about {
+  min-height: 390px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero.about {
+    min-height: 360px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero.about {
+    min-height: 480px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.about {
+    min-height: 520px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.about {
+    padding-bottom: 60px;
+  }
+}
+.hero.about {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-reviews-hero-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
+}
+@media screen and (min-width: 1024px) {
+  .hero.about > div > .hero__heading {
+    margin-bottom: 50px;
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.about > div > .hero__heading {
+    max-width: 760px;
+  }
+}
+.hero.about > div > .hero__text {
+  margin-bottom: 0;
+}
 .hero.procedure {
   min-height: 390px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero.procedure {
+    min-height: 480px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero.procedure {
+    min-height: 580px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.procedure {
+    min-height: 620px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.procedure {
+    padding-bottom: 60px;
+  }
+}
+.hero.procedure {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../images/mob-procedure-hero-bg.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-procedure-hero-bg.jpg);
 }
-.hero.procedure > div > .hero__heading {
-  max-width: 260px;
+@media screen and (min-width: 768px) {
+  .hero.procedure > div > .hero__heading {
+    max-width: 480px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero.procedure > div > .hero__heading {
+    margin-bottom: 50px;
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero.procedure > div > .hero__heading {
+    max-width: 760px;
+  }
 }
 .hero.procedure > div > .hero__text {
   position: relative;
   margin-left: 40px;
   margin-bottom: 0;
+}
+@media screen and (min-width: 1440px) {
+  .hero.procedure > div > .hero__text {
+    margin-left: 60px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.procedure > div > .hero__text {
+    margin-left: 70px;
+  }
 }
 .hero.procedure > div > .hero__text::before {
   content: "";
@@ -912,6 +1099,20 @@ nav li:hover > .site-subnav__list,
   background-image: url("../images/icons/decor-icon-3.svg");
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 1440px) {
+  .hero.procedure > div > .hero__text::before {
+    left: -60px;
+    width: 42px;
+    height: 42px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero.procedure > div > .hero__text::before {
+    left: -70px;
+    width: 48px;
+    height: 48px;
+  }
 }
 .hero__heading {
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
@@ -931,13 +1132,20 @@ nav li:hover > .site-subnav__list,
 @media screen and (min-width: 1024px) {
   .hero__heading {
     max-width: 860px;
-    font-size: 72px;
+    font-size: 68px;
   }
 }
 @media screen and (min-width: 1440px) {
   .hero__heading {
     max-width: 960px;
-    font-size: 96px;
+    font-size: 76px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero__heading {
+    max-width: 1000px;
+    font-size: 80px;
+    margin-bottom: 80px;
   }
 }
 .hero__text {
@@ -959,24 +1167,22 @@ nav li:hover > .site-subnav__list,
 @media screen and (min-width: 1024px) {
   .hero__text {
     max-width: 650px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.25;
   }
 }
 @media screen and (min-width: 1440px) {
   .hero__text {
-    max-width: 800px;
-    font-size: 24px;
+    max-width: 720px;
+    font-size: 20px;
     line-height: 1.25;
     margin-bottom: 42px;
   }
 }
 @media screen and (min-width: 1920px) {
   .hero__text {
-    max-width: 1000px;
-    font-size: 80px;
-    line-height: 1.1;
-    margin-bottom: 80px;
+    max-width: 800px;
+    font-size: 32px;
   }
 }
 .hero__item {
@@ -1007,6 +1213,16 @@ nav li:hover > .site-subnav__list,
   line-height: 1.4;
   letter-spacing: 0.02em;
   color: #FFFFFF;
+}
+@media screen and (min-width: 1440px) {
+  .hero__bullet {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero__bullet {
+    font-size: 20px;
+  }
 }
 
 .pricing__pre-title {

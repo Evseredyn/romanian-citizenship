@@ -70,9 +70,9 @@ body {
 //       padding: 40px 0;
 //    }
 
-//    @include mq(desktop) {
-//       padding: 60px 0;
-//    }
+   @include mq(monitor) {
+      padding: 60px 0;
+   }
 }
 
 .link {
@@ -126,9 +126,9 @@ p {
     color: $color-akcent;
 }
 
-// .current {
-//    color: $color-current;
-// }
+.current {
+   color: $color-current;
+}
 
 .yellow {
     color: $color-yellow-text;

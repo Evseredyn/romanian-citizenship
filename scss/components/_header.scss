@@ -55,7 +55,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // width: 100%; // Для мобілки, щоб кнопка була справа
+        width: 100%; // Для мобілки, щоб кнопка була справа
 
         // padding-top: 15px;
         // padding-bottom: 15px;
@@ -65,9 +65,10 @@
         //     padding-bottom: 20px;
         // }
 
-        // @include mq(desktop) {    
-        //     width: auto;
-        // }
+        @include mq(laptop) {
+            width: auto;
+            // max-width: 100%;
+        }
     }
 
     // &__link {
@@ -78,7 +79,7 @@
     // }
 
     &__logo {
-        fill: currentColor;
+        // fill: currentColor;
         
         @include mq(tablet) {    
             width: 89px;
@@ -198,6 +199,10 @@
         font-weight: 600;
         line-height: 1.7;
         transition: opacity $duration $timing-function;
+                    
+        @include mq(desktop) {
+        font-size: 18px;
+        }
     }
 
     &__link:hover,
@@ -210,6 +215,10 @@
     &__link.active {
         font-size: 16px;
         line-height: 1.7;
+                            
+        @include mq(desktop) {
+        font-size: 20px;
+        }
     }
 }
 

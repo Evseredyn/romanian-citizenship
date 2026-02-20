@@ -4,7 +4,11 @@
     padding-top: calc(140px + env(safe-area-inset-top));
 
     @include mq(laptop) {
-    // padding-top: calc(80px + env(safe-area-inset-top));
+    padding-top: calc(160px + env(safe-area-inset-top));
+    }
+
+    @include mq(desktop) {
+    padding-top: calc(200px + env(safe-area-inset-top));
     }
 }
 
@@ -37,10 +41,37 @@
 
     &.reviews {
         min-height: 390px;
+        padding-bottom: 20px;
+
+            @include mq(tablet) {
+                min-height: 480px;
+                padding-bottom: 40px;
+            }
+
+            @include mq(laptop) {
+                min-height: 580px;
+            }
+
+            @include mq(desktop) {
+                min-height: 620px;
+            }
+
+            @include mq(monitor) {
+                padding-bottom: 60px;
+            }
+
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
         
         &>div>.hero__heading {
-            max-width: 300px;
+            // max-width: 300px;
+            @include mq(laptop) {
+                margin-bottom: 50px;
+                max-width: 800px;
+            }
+
+            @include mq(desktop) {
+                max-width: 840px;
+            }
         }
         
         &>div>.hero__text {
@@ -50,10 +81,77 @@
 
     &.faq {
         min-height: 390px;
+        padding-bottom: 20px;
+
+            @include mq(tablet) {
+                min-height: 360px;
+                padding-bottom: 40px;
+            }
+
+            @include mq(laptop) {
+                min-height: 480px;
+            }
+
+            @include mq(desktop) {
+                min-height: 520px;
+            }
+
+            @include mq(monitor) {
+                padding-bottom: 60px;
+            }
+
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
         
         &>div>.hero__heading {
-            max-width: 260px;
+            // max-width: 260px;
+            @include mq(laptop) {
+                margin-bottom: 50px;
+                max-width: 700px;
+            }
+
+            @include mq(desktop) {
+                max-width: 760px;
+            }
+        }
+        
+        &>div>.hero__text {
+            margin-bottom: 0;
+        }
+    }
+
+    &.about {
+        min-height: 390px;
+        padding-bottom: 20px;
+
+            @include mq(tablet) {
+                min-height: 360px;
+                padding-bottom: 40px;
+            }
+
+            @include mq(laptop) {
+                min-height: 480px;
+            }
+
+            @include mq(desktop) {
+                min-height: 520px;
+            }
+
+            @include mq(monitor) {
+                padding-bottom: 60px;
+            }
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-reviews-hero-bg.jpg);
+        
+        &>div>.hero__heading {
+            // max-width: 260px;
+            @include mq(laptop) {
+                margin-bottom: 50px;
+                max-width: 700px;
+            }
+
+            @include mq(desktop) {
+                max-width: 760px;
+            }
         }
         
         &>div>.hero__text {
@@ -63,16 +161,55 @@
 
     &.procedure {
         min-height: 390px;
+        padding-bottom: 20px;
+
+            @include mq(tablet) {
+                min-height: 480px;
+                padding-bottom: 40px;
+            }
+
+            @include mq(laptop) {
+                min-height: 580px;
+            }
+
+            @include mq(desktop) {
+                min-height: 620px;
+            }
+
+            @include mq(monitor) {
+                padding-bottom: 60px;
+            }
+            
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../images/mob-procedure-hero-bg.jpg);
         
         &>div>.hero__heading {
-            max-width: 260px;
+            // max-width: 260px;
+            @include mq(tablet) {
+                max-width: 480px;
+            }
+
+            @include mq(laptop) {
+                margin-bottom: 50px;
+                max-width: 700px;
+            }
+
+            @include mq(desktop) {
+                max-width: 760px;
+            }
         }
         
         &>div>.hero__text {
             position: relative;
             margin-left: 40px;
             margin-bottom: 0;
+            
+            @include mq(desktop) {
+                margin-left: 60px;
+            }   
+
+            @include mq(monitor) {
+                margin-left: 70px;
+            }
 
             &::before {
                 content: '';
@@ -86,6 +223,18 @@
                 background-image: url('../images/icons/decor-icon-3.svg');
                 background-size: contain;
                 background-repeat: no-repeat;
+
+                @include mq(desktop) {
+                    left: -60px;
+                    width: 42px;
+                    height: 42px;
+                }
+
+                @include mq(monitor) {
+                    left: -70px;
+                    width: 48px;
+                    height: 48px;
+                }
             }
         }
     }
@@ -108,22 +257,22 @@
 
             @include mq(laptop) {
             max-width: 860px;
-            font-size: 72px;
+            font-size: 68px;
             // line-height: 1.2;
             }
 
             @include mq(desktop) {
             max-width: 960px;
-            font-size: 96px;
+            font-size: 76px;
             // line-height: 1.25;
             }
 
-        //  @include mq(monitor) {
-        //     max-width: 1000px;
-        //     font-size: 80px;
-        //     line-height: 1.1;
-        //     margin-bottom: 80px;
-        //  }
+         @include mq(monitor) {
+            max-width: 1000px;
+            font-size: 80px;
+            // line-height: 1.1;
+            margin-bottom: 80px;
+         }
     }
 
     &__text {
@@ -138,27 +287,25 @@
            max-width: 560px;
            font-size: 16px;
            line-height: 1.28;
-            margin-bottom: 42px;
+           margin-bottom: 42px;
         }
 
         @include mq(laptop) {
            max-width: 650px;
-           font-size: 20px;
+           font-size: 18px;
            line-height: 1.25;
         }
 
         @include mq(desktop) {
-           max-width: 800px;
-           font-size: 24px;
+           max-width: 720px;
+           font-size: 20px;
            line-height: 1.25;
             margin-bottom: 42px;
         }
 
         @include mq(monitor) {
-           max-width: 1000px;
-           font-size: 80px;
-           line-height: 1.1;
-           margin-bottom: 80px;
+           max-width: 800px;
+           font-size: 32px;
         }
     }
 
@@ -193,5 +340,13 @@
         line-height: 1.4;
         letter-spacing: 0.02em;
         color: $color-white;
+
+        @include mq(desktop) {
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 20px;
+        }
     }
 }
