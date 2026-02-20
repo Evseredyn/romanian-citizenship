@@ -8,6 +8,17 @@
         letter-spacing: 0.02em;
         line-height: 1.25;
         color: $color-akcent;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            max-width: 200px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            max-width: 280px;
+            font-size: 24px;
+        }
     }
 
     &__title {
@@ -17,6 +28,17 @@
         line-height: 1.1;
         letter-spacing: 0.02em;
         color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            max-width: 200px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            margin-bottom: 48px;
+            font-size: 64px;
+        }
     }
 
     &__tabs {
@@ -61,6 +83,20 @@
         @include mq(tablet) {
             flex-direction: row;
             justify-content: center;
+            gap: 24px;
+        }
+
+        @include mq(laptop) {
+            margin-bottom: 48px;
+        }
+
+        @include mq(desktop) {
+            gap: 48px;
+        }
+
+        @include mq(monitor) {
+            gap: 80px;
+            margin-bottom: 56px;
         }
     }
 
@@ -76,6 +112,34 @@
             flex: 1;
             max-width: 350px;
         }
+
+        @include mq(desktop) {
+            max-width: 450px;
+        }
+
+        @include mq(monitor) {
+            max-width: 400px;
+        }
+    }
+
+    &__wrapper {
+
+        @include mq(tablet) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include mq(desktop) {
+            margin-left: -100px;
+            justify-content: center;
+            gap: 120px;
+        }
+
+        @include mq(monitor) {
+            margin-left: -200px;
+            gap: 220px;
+        }
     }
 
     &__text {
@@ -85,6 +149,18 @@
         line-height: 1.4;
         letter-spacing: 0.02em;
         color: $color-secondary-title;
+
+        @include mq(tablet) {
+            max-width: 460px;
+        }
+
+        @include mq(laptop) {
+            max-width: 620px;
+        }
+
+        @include mq(desktop) {
+            max-width: 770px;
+        }
     }
 
     &__link {
@@ -97,6 +173,21 @@
         background-color: $color-akcent;
         text-align: center;
         border-radius: 16px;
+
+        @include mq(tablet) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 124px;
+            height: 124px;
+            line-height: 1.25;
+            border-radius: 100%;
+        }
+
+        @include mq(laptop) {
+            width: 148px;
+            height: 148px;
+        }
     }
 }
 
@@ -116,6 +207,23 @@
         line-height: 1.6;
         letter-spacing: 0.02em;
         color: $color-secondary-title;
+
+        @include mq(tablet) {
+            max-width: auto;
+            font-size: 13px;
+        }
+
+        @include mq(laptop) {
+            min-width: 90%;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        @include mq(monitor) {
+            font-size: 20px;
+            line-height: 1.25;
+        }
     }
 
     &__price {
@@ -136,6 +244,14 @@
         font-size: 14px;
         line-height: 1.4;
         border-top: 1px solid $color-border;
+
+        @include mq(desktop) {
+            max-width: 320px;
+        }
+
+        @include mq(monitor) {
+            max-width: 360px;
+        }
     }
 
     &__bullet {
@@ -159,6 +275,18 @@
             background-image: url('../images/icons/ticker.svg');
             background-size: contain;
             background-repeat: no-repeat;
+
+            @include mq(tablet) {
+                left: -36px;
+                width: 20px;
+                height: 20px;
+            }
+
+            @include mq(desktop) {
+                left: -40px;
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }

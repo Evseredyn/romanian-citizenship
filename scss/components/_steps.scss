@@ -20,6 +20,17 @@
         letter-spacing: 0.02em;
         line-height: 1.25;
         color: $color-akcent;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            max-width: 240px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            max-width: 360px;
+            font-size: 24px;
+        }
     }
 
     &__title {
@@ -29,6 +40,18 @@
         line-height: 1.1;
         letter-spacing: 0.02em;
         color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            max-width: 620px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            margin-bottom: 48px;
+            max-width: 820px;
+            font-size: 64px;
+        }
     }
 
     &__list {

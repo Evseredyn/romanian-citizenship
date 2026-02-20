@@ -885,6 +885,7 @@ nav li:hover > .site-subnav__list,
 }
 @media screen and (min-width: 1440px) {
   .hero {
+    padding-bottom: 80px;
     min-height: 620px;
   }
 }
@@ -1234,6 +1235,19 @@ nav li:hover > .site-subnav__list,
   line-height: 1.25;
   color: #4065f6;
 }
+@media screen and (min-width: 768px) {
+  .pricing__pre-title {
+    margin-bottom: 24px;
+    max-width: 200px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .pricing__pre-title {
+    max-width: 280px;
+    font-size: 24px;
+  }
+}
 .pricing__title {
   margin-bottom: 24px;
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
@@ -1241,6 +1255,19 @@ nav li:hover > .site-subnav__list,
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .pricing__title {
+    margin-bottom: 48px;
+    max-width: 200px;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .pricing__title {
+    margin-bottom: 48px;
+    font-size: 64px;
+  }
 }
 .pricing__tabs {
   display: -webkit-box;
@@ -1301,6 +1328,23 @@ nav li:hover > .site-subnav__list,
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pricing__list {
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .pricing__list {
+    gap: 48px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .pricing__list {
+    gap: 80px;
+    margin-bottom: 56px;
   }
 }
 .pricing__item {
@@ -1318,6 +1362,44 @@ nav li:hover > .site-subnav__list,
     max-width: 350px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .pricing__item {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .pricing__item {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pricing__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .pricing__wrapper {
+    margin-left: -100px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 120px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .pricing__wrapper {
+    margin-left: -200px;
+    gap: 220px;
+  }
+}
 .pricing__text {
   margin-bottom: 32px;
   font-size: clamp(0.75rem, 0.661rem + 0.45vw, 0.875rem);
@@ -1325,6 +1407,21 @@ nav li:hover > .site-subnav__list,
   line-height: 1.4;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (min-width: 768px) {
+  .pricing__text {
+    max-width: 460px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pricing__text {
+    max-width: 620px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .pricing__text {
+    max-width: 770px;
+  }
 }
 .pricing__link {
   display: block;
@@ -1336,6 +1433,29 @@ nav li:hover > .site-subnav__list,
   background-color: #4065f6;
   text-align: center;
   border-radius: 16px;
+}
+@media screen and (min-width: 768px) {
+  .pricing__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 124px;
+    height: 124px;
+    line-height: 1.25;
+    border-radius: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pricing__link {
+    width: 148px;
+    height: 148px;
+  }
 }
 
 .plan-card {
@@ -1349,6 +1469,26 @@ nav li:hover > .site-subnav__list,
   line-height: 1.6;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (min-width: 768px) {
+  .plan-card__subtitle {
+    max-width: auto;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .plan-card__subtitle {
+    min-width: 90%;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .plan-card__subtitle {
+    font-size: 20px;
+    line-height: 1.25;
+  }
 }
 .plan-card__price {
   font-size: 24px;
@@ -1372,6 +1512,16 @@ nav li:hover > .site-subnav__list,
   line-height: 1.4;
   border-top: 1px solid #C8C8C8;
 }
+@media screen and (min-width: 1440px) {
+  .plan-card__bullets {
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .plan-card__bullets {
+    max-width: 360px;
+  }
+}
 .plan-card__bullet {
   position: relative;
   max-width: 300px;
@@ -1394,6 +1544,20 @@ nav li:hover > .site-subnav__list,
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media screen and (min-width: 768px) {
+  .plan-card__bullet::before {
+    left: -36px;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .plan-card__bullet::before {
+    left: -40px;
+    width: 24px;
+    height: 24px;
+  }
+}
 
 .steps__container {
   overflow: hidden;
@@ -1413,6 +1577,19 @@ nav li:hover > .site-subnav__list,
   line-height: 1.25;
   color: #4065f6;
 }
+@media screen and (min-width: 768px) {
+  .steps__pre-title {
+    margin-bottom: 24px;
+    max-width: 240px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .steps__pre-title {
+    max-width: 360px;
+    font-size: 24px;
+  }
+}
 .steps__title {
   margin-bottom: 24px;
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
@@ -1420,6 +1597,20 @@ nav li:hover > .site-subnav__list,
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .steps__title {
+    margin-bottom: 48px;
+    max-width: 620px;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .steps__title {
+    margin-bottom: 48px;
+    max-width: 820px;
+    font-size: 64px;
+  }
 }
 .steps__list {
   position: relative;

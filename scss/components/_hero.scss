@@ -27,6 +27,7 @@
     }
 
     @include mq(desktop) {
+        padding-bottom: 80px;
         min-height: 620px;
     }
  
