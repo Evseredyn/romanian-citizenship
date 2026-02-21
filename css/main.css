@@ -398,10 +398,10 @@ p {
   -webkit-transition: opacity 0.3s, background-color 0.3s;
   transition: opacity 0.3s, background-color 0.3s;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .scroll-to-top-btn {
     bottom: 20px;
-    left: calc(50% + 384px - 80px);
+    left: calc(50% + 510px - 80px);
   }
 }
 @media screen and (min-width: 1440px) {
@@ -414,7 +414,7 @@ p {
 }
 @media screen and (min-width: 1920px) {
   .scroll-to-top-btn {
-    left: calc(50% + 960px - 300px);
+    left: calc(50% + 1020px - 300px);
   }
 }
 
@@ -2065,6 +2065,38 @@ nav li:hover > .site-subnav__list,
           box-shadow: 0px 20px 20px -10px rgba(149, 149, 149, 0.25);
   z-index: 2;
 }
+@media screen and (min-width: 1024px) {
+  .contact-us__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 60px;
+    padding: 40px 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact-us__wrapper {
+    padding: 40px 80px;
+  }
+}
+.contact-us__inner, .contact-us-form__mob {
+  width: 100%;
+}
+@media screen and (min-width: 1440px) {
+  .contact-us__inner, .contact-us-form__mob {
+    -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
 .contact-us__title {
   margin-bottom: 32px;
   max-width: 150px;
@@ -2074,13 +2106,20 @@ nav li:hover > .site-subnav__list,
   letter-spacing: 0.02em;
   color: #000000;
 }
+@media screen and (min-width: 768px) {
+  .contact-us__title {
+    max-width: 250px;
+  }
+}
 .contact-us__text {
-  margin-bottom: 32px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.65;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.8);
+}
+.contact-us__text:not(:last-child) {
+  margin-bottom: 32px;
 }
 .contact-us__text.bold {
   font-weight: 600;
@@ -2115,11 +2154,6 @@ nav li:hover > .site-subnav__list,
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
-}
-@media screen and (min-width: 1440px) {
-  .contact-us-form__mob {
-    display: none;
-  }
 }
 .contact-us-form__field {
   display: -webkit-box;
@@ -2245,6 +2279,11 @@ nav li:hover > .site-subnav__list,
   background-color: #4065f6;
   text-align: center;
   border-radius: 16px;
+}
+@media screen and (min-width: 1440px) {
+  .contact-us-form__submit-btn {
+    width: 380px;
+  }
 }
 
 .contact-us__link {
