@@ -1415,11 +1415,13 @@ nav li:hover > .site-subnav__list,
 @media screen and (min-width: 1024px) {
   .pricing__text {
     max-width: 620px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1440px) {
   .pricing__text {
     max-width: 770px;
+    font-size: 20px;
   }
 }
 .pricing__link {
@@ -3255,6 +3257,17 @@ nav li:hover > .site-subnav__list,
   text-align: center;
   color: #4065f6;
 }
+@media screen and (min-width: 768px) {
+  .info__pre-title {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .info__pre-title {
+    font-size: 24px;
+  }
+}
 .info__title {
   margin-bottom: 24px;
   font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
@@ -3264,6 +3277,17 @@ nav li:hover > .site-subnav__list,
   text-align: center;
   color: #000000;
 }
+@media screen and (min-width: 768px) {
+  .info__title {
+    margin-bottom: 48px;
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .info__title {
+    font-size: 64px;
+  }
+}
 .info__description {
   margin-top: 16px;
   font-size: 14px;
@@ -3271,4 +3295,14 @@ nav li:hover > .site-subnav__list,
   line-height: 1.65;
   letter-spacing: 0.02em;
   color: #363049;
+}
+@media screen and (min-width: 1024px) {
+  .info__description {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .info__description {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */

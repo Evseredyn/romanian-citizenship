@@ -155,10 +155,12 @@
 
         @include mq(laptop) {
             max-width: 620px;
+            font-size: 16px;
         }
 
         @include mq(desktop) {
             max-width: 770px;
+            font-size: 20px;
         }
     }
 
