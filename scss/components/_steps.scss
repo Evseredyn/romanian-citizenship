@@ -48,7 +48,6 @@
         }
 
         @include mq(desktop) {
-            margin-bottom: 48px;
             max-width: 820px;
             font-size: 64px;
         }

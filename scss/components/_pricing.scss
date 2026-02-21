@@ -36,7 +36,6 @@
         }
 
         @include mq(desktop) {
-            margin-bottom: 48px;
             font-size: 64px;
         }
     }
@@ -181,7 +180,7 @@
             width: 124px;
             height: 124px;
             line-height: 1.25;
-            border-radius: 100%;
+            border-radius: 50%;
         }
 
         @include mq(laptop) {
