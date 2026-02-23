@@ -1,27 +1,40 @@
 .stories {
-
-
-    &__pre-title {
+        &__pre-title {
         margin-bottom: 8px;
+        // max-width: 180px;
         font-size: 12px;
         font-weight: 400;
         letter-spacing: 0.02em;
         line-height: 1.25;
+        text-align: center;
         color: $color-akcent;
-    }
 
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+        }
+    }
+    
     &__title {
         margin-bottom: 24px;
-        max-width: 260px;
         font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
         font-weight: 400;
         line-height: 1.1;
         letter-spacing: 0.02em;
+        text-align: center;
         color: $color-black;
 
         @include mq(tablet) {
-            margin-bottom: 42px;
-            max-width: 400px;
+            margin-bottom: 48px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            font-size: 64px;
         }
     }
 
@@ -37,6 +50,14 @@
         line-height: 1.25;
         letter-spacing: 0.02em;
         color: $color-black;
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
+
+        @include mq(monitor) {
+            font-size: 22px;
+        }
     }
 
     &__person {
@@ -45,18 +66,33 @@
         line-height: 1.25;
         letter-spacing: 0.02em;
         color: $color-tab-text;
+
+        @include mq(desktop) {
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 20px;
+        }
     }
 
     &__description {
         position: relative;
-        margin-bottom: 16px;
         padding-top: 14px;
-        min-height: 410px;
+        // min-height: 410px;
         font-size: 14px;
         font-weight: 400;
         line-height: 1.65;
         letter-spacing: 0.02em;
         color: $color-secondary-title;
+
+        @include mq(desktop) {
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 20px;
+        }
     }
 
     &__description::before {
@@ -71,56 +107,178 @@
         background-size: contain;
     }
 
-    &__img-wrapper {
+    &__img--wrapper {
         position: relative;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        z-index: 1;
+             
+        @include mq(tablet) {
+            width: calc(50% - 12px);
+            flex-shrink: 0;
+        }
+
+        @include mq(laptop) {
+            // width: calc(50% - 30px);
+            width: 400px;
+        }
 
         &::before {
             content: "";
             position: absolute;
             top: 50%;
+            // right: 50%;
             transform: translateY(-50%);
             width: 100%;
+            max-width: 440px;
             height: 215px;
             background-color: $color-pale-blue-bg;
             border-radius: 24px;
             z-index: -1;
+
+            @include mq(laptop) {
+                width: 80%;
+            }
         }
     }
+
     &__img {
         position: relative;
-        margin-left: auto;
-        margin-right: auto;
         border-radius: 24px;
+        z-index: 2;
     }
 
-    &__img::before {
-        position: absolute;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 215px;
-        border-radius: 24px;
-        background-color: $color-current;
-        z-index: -1;
-    }
+    // &__slider {
+    //     padding-bottom: 40px; // Місце для крапок знизу
+    // }
+
+    // &__pagination {
+    //     bottom: 0 !important; // Опускаємо точки нижче
+        
+    //     .swiper-pagination-bullet {
+    //         background: $color-akcent; // Колір неактивної точки
+    //         opacity: 0.5;
+            
+    //         &-active {
+    //             opacity: 1;
+    //             background: $color-akcent; // Колір активної точки
+    //         }
+    //     }
+    // }
 
     &__slider {
-        padding-bottom: 40px; // Місце для крапок знизу
+        position: relative;
+        padding-bottom: 50px; // Додаємо відступ для крапок на мобілці
+        overflow: hidden; // Щоб слайди не вилазили за межі на мобайлі
+
+        @include mq(laptop) {
+            padding-bottom: 0;
+            overflow: visible; // Дозволяємо сітці бути вільною
+        }
+    }
+
+    &.swiper-initialized {
+        // Стилі, коли слайдер працює (мобілка/планшет)
+    }
+
+    &__list {
+        display: flex;
+
+        @include mq(laptop) {
+            display: flex !important;
+            flex-direction: column;
+            
+            // Твої 1200px+
+            // display: grid;
+            // grid-template-columns: repeat(2, 1fr); // Розставляємо по 2 в ряд
+            gap: 60px;
+            // Скидаємо трансформації Swiper, які змушують їх бути в один ряд
+            transform: none !important; 
+            flex-wrap: nowrap;
+
+        @include mq(desktop) {
+            gap: 100px;
+            // grid-template-columns: repeat(2, 1fr); // Розставляємо по 2 в ряд
+        }
+            // // Важливо скинути флекси, які додає swiper-wrapper за замовчуванням
+            // display: grid !important; 
+            // transform: none !important;
+            // width: 100% !important;
+        }
+    }
+
+    &__item {
+        height: auto;
+
+        @include mq(laptop) {
+            width: 100% !important; // Скидаємо ширину, яку міг лишити Swiper
+            margin-right: 0 !important; // Прибираємо відступи Swiper
+            
+            // Застосовуємо реверс до КОЖНОГО ДРУГОГО елемента li
+            &:nth-child(even) {
+                .stories__client {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+
+    &__client {
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        @include mq(tablet) {
+            flex-direction: row;
+            align-items: center;
+            // На десктопі можемо задати однаковий розподіл
+            justify-content: space-between;
+            gap: 32px;
+        }
+                
+        @include mq(laptop) {
+            justify-content: center;
+            gap: 40px;
+
+            // &:nth-child(even) {
+            //     flex-direction: row-reverse;
+            // }
+        }
+
+        @include mq(desktop) {
+            gap: 80px;
+        }
+    }
+
+    &__card--wrapper {
+        width: 100%;
+
+        @include mq(tablet) {
+            // Формула: 50% мінус половина гепу
+            width: calc(50% - 12px); 
+            flex-shrink: 0; // Забороняємо звужуватися
+        }
+
+        @include mq(laptop) {
+            // Тепер кожен блок займає рівно половину (мінус половина гепу)
+            width: calc(50% - 30px); 
+            flex-shrink: 0;
+        }
+
+        @include mq(monitor) {
+            width: 700px;
+        }
     }
 
     &__pagination {
-        bottom: 0 !important; // Опускаємо точки нижче
+        display: block; 
+        bottom: 10px !important; // Піднімаємо трохи вище дна
         
-        .swiper-pagination-bullet {
-            background: $color-akcent; // Колір неактивної точки
-            opacity: 0.5;
-            
-            &-active {
-                opacity: 1;
-                background: $color-akcent; // Колір активної точки
-            }
+        @include mq(laptop) {
+            display: none; // Ховаємо крапки на десктопі
         }
     }
 }

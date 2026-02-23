@@ -20,6 +20,17 @@
         letter-spacing: 0.02em;
         line-height: 1.25;
         color: $color-akcent;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            max-width: 200px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            max-width: 280px;
+            font-size: 24px;
+        }
     }
 
     &__title {
@@ -29,6 +40,17 @@
         line-height: 1.1;
         letter-spacing: 0.02em;
         color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            max-width: 520px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            max-width: 720px;
+            font-size: 64px;
+        }
     }
 
     &__description {
@@ -38,6 +60,14 @@
         line-height: 1.65;
         letter-spacing: 0.02em;
         color: $color-secondary-title;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
     }
 
     &__inner {
@@ -63,6 +93,10 @@
             font-weight: 400;
             line-height: 1.25;
             color: $color-secondary-title;
+
+            @include mq(desktop) {
+                font-size: 20px;
+            }
         }
     }
 
@@ -75,9 +109,13 @@
         box-sizing: border-box;
         
         @include mq(tablet) {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); // 3 колонки
+            flex-wrap: wrap;
             gap: 24px;
+
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr); // 3 колонки
+            // gap: 24px;
+
             // list-style: none;
             // padding: 0;
         }
@@ -89,10 +127,10 @@
         height: auto; // Для однакової висоти карток у Swiper
         
         @include mq(tablet) {
-            &--wide {
-                width: 100%;
-                grid-column: 1 / -1; // 7-й крок на всю ширину
-            }
+            // &--wide {
+            //     width: 100%;
+            //     grid-column: 1 / -1; // 7-й крок на всю ширину
+            // }
         }
     }
 
@@ -121,14 +159,31 @@
         opacity: 0.8; // Легкий акцент на номері
     }
 
+    &__icon {
+
+        @include mq(desktop) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
     &__text {
         font-size: 14px;
         line-height: 1.5;
         color: $color-black;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
     }
 }
 
 .company {
+
     &__list {
         position: relative;
         padding-bottom: 50px; // Місце для підказки
