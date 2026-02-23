@@ -83,7 +83,11 @@
         
         @include mq(tablet) {    
             width: 89px;
-        }     
+        }
+                
+        @include mq(monitor) {    
+            width: 120px;
+        }
     }
 
     &__btn {
@@ -128,6 +132,10 @@
             background-color: $color-akcent;
             border-radius: 16px;
             transition: opacity $duration $timing-function;
+
+            @include mq(desktop) {    
+                font-size: 18px;
+            }
         }
 
         &:hover {

@@ -1,13 +1,18 @@
 .process {
 
-    &__container {
-            @include mq(laptop) {
-                display: grid;
-                grid-template-columns: 300px 1fr; // Ліва колонка фіксована, права — гумова
-                gap: 60px;
-                align-items: start;
-            }
-    }
+    // &__container {
+    //         @include mq(laptop) {
+    //             display: grid;
+    //             grid-template-columns: minmax(350px, 1fr) 2fr;
+    //             gap: 60px;
+    //             align-items: start;
+    //         }
+
+    //         @include mq(monitor) {
+    //             grid-template-columns: 450px 1fr;
+    //             gap: 100px;
+    //         }
+    // }
 
     &__pre-title {
         margin-bottom: 8px;
@@ -18,9 +23,20 @@
         line-height: 1.25;
         color: $color-akcent;
 
-            @include mq(laptop) {
-                grid-column: 1 / 3;
-            }
+        // @include mq(laptop) {
+        //     grid-column: 1 / 3;
+        // }
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            max-width: 260px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            max-width: 360px;
+            font-size: 24px;
+        }
     }
     
     &__title {
@@ -31,9 +47,34 @@
         letter-spacing: 0.02em;
         color: $color-black;
 
-            @include mq(laptop) {
-                grid-column: 1 / 3;
-            }
+        // @include mq(laptop) {
+        //     grid-column: 1 / 3;
+        // }
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            max-width: 620px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            max-width: 820px;
+            font-size: 64px;
+        }
+    }
+
+    &__main {
+        @include mq(laptop) {
+            display: grid;
+            grid-template-columns: minmax(350px, 1fr) 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @include mq(monitor) {
+            grid-template-columns: 450px 1fr;
+            gap: 100px;
+        }
     }
 
     &__navigation {
@@ -62,20 +103,21 @@
             display: none;
         }
 
-        @include mq(laptop) {
-            gap: 16px;
-            margin-bottom: 0;
-        }
+        // @include mq(laptop) {
+        //     gap: 16px;
+        //     margin-bottom: 0;
+        // }
 
         @include mq(laptop) {
             flex-direction: column;
+            gap: 16px;
+            margin-bottom: 0;
             // position: sticky;
             top: 40px; // Відступ від верху екрана при скролі
             overflow-x: visible;
             border-bottom: none;
             border-left: 1px solid rgba($color-black, 0.1);
             padding: 0 0 0 20px;
-            gap: 16px;
         }
     }
 
@@ -101,6 +143,14 @@
         transition: $duration $timing-function;
         white-space: nowrap;
         cursor: pointer;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
 
         &::after {
             content: "";
@@ -167,6 +217,14 @@
         line-height: 1.65;
         letter-spacing: 0.02em;
         color: $color-faq-text;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
     }
 }
 
@@ -180,7 +238,11 @@
         color: $color-black;
 
         @include mq(laptop) {
-            // margin-top: 0;
+            font-size: 28px;
+        }
+
+        @include mq(desktop) {
+            font-size: 32px;
         }
 
         &--inner {
@@ -195,6 +257,14 @@
         line-height: 1.65;
         letter-spacing: 0.02em;
         color: $color-faq-text;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
     }
 
     &__item {

@@ -75,37 +75,91 @@
 //     });
 // });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const navLinks = document.querySelectorAll('.process__link');
+//     const sections = document.querySelectorAll('.stages__item');
+
+//     // 1. Обробка кліку (Active class)
+//     navLinks.forEach(link => {
+//         link.addEventListener('click', function(e) {
+//             // Видаляємо active у всіх
+//             navLinks.forEach(l => l.classList.remove('active'));
+//             // Додаємо поточному
+//             this.classList.add('active');
+//         });
+//     });
+
+//     // 2. Відстеження скролу (щоб таби перемикалися самі, коли користувач гортає сторінку)
+//     const observerOptions = {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0.6 // Коли 60% секції у в'юпорті
+//     };
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const id = entry.target.getAttribute('id');
+//                 navLinks.forEach(link => {
+//                     link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+//                 });
+//             }
+//         });
+//     }, observerOptions);
+
+//     sections.forEach(section => observer.observe(section));
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.process__link');
     const sections = document.querySelectorAll('.stages__item');
 
-    // 1. Обробка кліку (Active class)
+    // 1. Плавний скрол при кліку (опціонально, але корисно)
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Видаляємо active у всіх
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Додаємо поточному
-            this.classList.add('active');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
-    // 2. Відстеження скролу (щоб таби перемикалися самі, коли користувач гортає сторінку)
+    // 2. Розумне відстеження скролу
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.6 // Коли 60% секції у в'юпорті
+        // rootMargin зміщує зону "спрацьовування" до верхньої частини екрана
+        rootMargin: '-10% 0px -70% 0px', 
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
+                
                 navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
                 });
             }
         });
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
+
+    // 3. Фікс для останнього пункту (якщо доскролили до самого низу)
+    window.addEventListener('scroll', () => {
+        const isBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
+        
+        if (isBottom) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            navLinks[navLinks.length - 1].classList.add('active');
+        }
+    });
 });

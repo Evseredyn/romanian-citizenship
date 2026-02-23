@@ -71,6 +71,10 @@
         letter-spacing: 0.02em;
         color: $color-secondary-title;
 
+        @include mq(monitor) {
+            font-size: 18px;
+        }
+
         &:not(:last-child) {
             margin-bottom: 32px;
         }
@@ -128,6 +132,10 @@
             @include mq(desktop) {
                 font-size: 16px;
             }
+
+            @include mq(monitor) {
+                font-size: 18px;
+            }
         }
         &__input,
         &__comment {
@@ -141,6 +149,10 @@
             font-weight: 400;
             // color: $color-label;
             box-sizing: border-box;
+
+            @include mq(monitor) {
+                font-size: 18px;
+            }
 
             @include placeholder {
                 color: $color-label;
@@ -194,6 +206,7 @@
 
             @include mq(desktop) {
                 width: 380px;
+                font-size: 18px;
             }
         }
     }

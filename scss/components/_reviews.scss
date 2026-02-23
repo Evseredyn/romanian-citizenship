@@ -126,6 +126,10 @@
         font-size: 20px;
         }
 
+        @include mq(monitor) {
+        font-size: 22px;
+        }
+
         &::before {
             content: "";
             position: absolute;

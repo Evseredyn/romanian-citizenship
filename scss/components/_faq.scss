@@ -8,6 +8,15 @@
         line-height: 1.25;
         text-align: center;
         color: $color-akcent;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+        }
     }
 
     &__title {
@@ -18,7 +27,17 @@
         letter-spacing: 0.02em;
         text-align: center;
         color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            font-size: 64px;
+        }
     }
+
     &__subtitle {
         margin-bottom: 24px;
         font-size: 14px;
@@ -27,6 +46,14 @@
         letter-spacing: 0.02em;
         text-align: center;
         color: $color-secondary-title;
+                        
+        @include mq(desktop) {    
+            font-size: 16px;
+        }
+                        
+        @include mq(monitor) {    
+            font-size: 18px;
+        } 
     }
 }
 
@@ -104,6 +131,10 @@
         font-weight: 600;
         letter-spacing: 0.02em;
         line-height: 1.65;
+                
+        @include mq(monitor) {    
+            font-size: 18px;
+        } 
     }
 
     &__content {
@@ -119,5 +150,9 @@
         letter-spacing: 0.02em;
         line-height: 1.65;
         color: $color-accordion-text;
+                        
+        @include mq(monitor) {    
+            font-size: 20px;
+        } 
     }
 }
