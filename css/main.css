@@ -1773,9 +1773,24 @@ nav li:hover > .site-subnav__list,
 }
 .steps__accent--text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 125%;
   color: rgba(255, 255, 255, 0.8);
+}
+@media screen and (min-width: 1024px) {
+  .steps__accent--text {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .steps__accent--text {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .steps__accent--text {
+    font-size: 24px;
+  }
 }
 
 .steps__list {
@@ -2767,12 +2782,20 @@ nav li:hover > .site-subnav__list,
 }
 @media screen and (min-width: 1024px) {
   .company__description {
+    margin-bottom: 48px;
     font-size: 16px;
   }
 }
 @media screen and (min-width: 1440px) {
   .company__description {
+    max-width: 96%;
+    margin-bottom: 64px;
     font-size: 20px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .company__description {
+    max-width: 90%;
   }
 }
 .company__inner {
@@ -2784,6 +2807,16 @@ nav li:hover > .site-subnav__list,
           align-items: center;
   gap: clamp(0.5rem, -0.5rem + 5vw, 1rem);
   margin-bottom: 32px;
+}
+@media screen and (min-width: 1024px) {
+  .company__inner {
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .company__inner {
+    margin-bottom: 64px;
+  }
 }
 .company__inner-numb {
   font-size: 40px;
@@ -2813,16 +2846,40 @@ nav li:hover > .site-subnav__list,
 }
 @media screen and (min-width: 768px) {
   .company__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     gap: 24px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .company__list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
 .company__item {
-  width: 268px;
+  max-width: 268px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   height: auto;
+}
+@media screen and (min-width: 1024px) {
+  .company__item {
+    max-width: 330px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .company__item {
+    max-width: 260px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .company__item {
+    max-width: 360px;
+  }
 }
 .company__tab {
   height: 100%;
@@ -2878,7 +2935,7 @@ nav li:hover > .site-subnav__list,
   position: relative;
   padding-bottom: 50px;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .company__list::after {
     content: "Листайте";
     position: absolute;

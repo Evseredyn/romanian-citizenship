@@ -198,9 +198,21 @@
 
     &__accent--text {
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 125%;
         color: $color-muted-text;
+
+        @include mq(laptop) {
+            font-size: 18px;
+        }
+
+        @include mq(desktop) {
+            font-size: 22px;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+        }
     }
 }
 
