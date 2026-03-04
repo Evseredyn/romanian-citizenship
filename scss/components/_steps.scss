@@ -64,11 +64,15 @@
         
         @include mq(tablet) {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); // 3 колонки
+            grid-template-columns: repeat(2, 1fr); // 3 колонки
             gap: 24px;
 // ВАЖЛИВО: скидаємо стилі Swiper, які він додає інлайново
             transform: none !important; 
             width: 100% !important;
+        }
+
+        @include mq(laptop) {
+            grid-template-columns: repeat(3, 1fr); // 3 колонки
         }
     }
 
@@ -175,6 +179,13 @@
         font-weight: 500;
     }
 
+    &__tab--list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
     &__text {
         font-size: 14px;
         line-height: 1.5;
@@ -189,11 +200,60 @@
         }
     }
 
+    &__tab--text {
+        position: relative;
+        margin-left: 20px;
+        font-size: 14px;
+        line-height: 1.25;
+        color: $color-black;
+
+        @include mq(laptop) {
+            font-size: 16px;
+        }
+
+        @include mq(desktop) {
+            font-size: 20px;
+        }
+    }
+
+    &__tab--text::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 8px;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: $color-akcent;
+        border-radius: 50%;
+
+        @include mq(laptop) {
+        top: 10px;
+        }
+
+        @include mq(desktop) {
+        top: 12px;
+        }
+    }
+
     &__accent--line {
         margin-top: 20px;
         padding: 40px 30px;
         border-radius: 16px;
         background-color: $color-akcent;
+
+        @include mq(laptop) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @include mq(desktop) {
+            gap: 40px;
+            padding: 40px 60px;
+        }
     }
 
     &__accent--text {
@@ -212,6 +272,36 @@
 
         @include mq(monitor) {
             font-size: 24px;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 80%;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 32px;
+        font-size: clamp(0.75rem, 0.5rem + 1.25vw, 0.875rem);
+        line-height: 1.7;
+        font-weight: 500;
+        color: $color-black;
+        background-color: $color-white-bg;
+        text-align: center;
+        border-radius: 16px;
+        box-shadow: $shadow;
+
+        @include mq(tablet) {
+            max-width: 280px;
+        }
+
+        @include mq(laptop) {
+            margin-top: 0;
+        }
+
+        @include mq(desktop) {
+            max-width: 320px;
+            font-size: 18px;
         }
     }
 }
