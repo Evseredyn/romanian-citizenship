@@ -79,7 +79,6 @@
     // }
 
     &__logo {
-        // fill: currentColor;
         
         @include mq(tablet) {    
             width: 89px;
@@ -107,7 +106,6 @@
     }
 
     &__icon {
-        fill: currentColor;
 
         @include mq(tablet) {    
             width: 41px;
