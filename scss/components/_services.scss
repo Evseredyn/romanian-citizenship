@@ -1,4 +1,4 @@
-.pricing {
+.services {
 
     &__pre-title {
         margin-bottom: 8px;
@@ -197,14 +197,36 @@
     }
 }
 
-.plan-card {
+.service-card {
     height: 100%;
 
-    // &__name {
-    //     font-size: 20px;
-    //     margin-bottom: 12px;
-    // }
+    &__title {
+        margin-bottom: 8px;
+        // max-width: 280px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.6;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $color-secondary-title;
 
+        @include mq(tablet) {
+            max-width: auto;
+            font-size: 13px;
+        }
+
+        @include mq(laptop) {
+            min-width: 90%;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+    }
     &__subtitle {
         margin-bottom: 8px;
         max-width: 280px;
@@ -287,16 +309,57 @@
             background-repeat: no-repeat;
 
             @include mq(tablet) {
-                // left: -36px;
+                // left: -30px;
                 width: 20px;
                 height: 20px;
             }
 
             @include mq(desktop) {
-                // left: -40px;
+                // left: -32px;
                 width: 24px;
                 height: 24px;
             }
+        }
+    }
+
+    &__action {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+
+
+        @include mq(desktop) {
+            max-width: 80%;
+        }
+    }
+
+    &__link {
+        margin-top: 32px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin-left: 64px;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.7;
+        color: $color-white;
+        background-color: $color-akcent;
+        border-radius: 16px;
+        transition: opacity $duration $timing-function;
+
+        @include mq(desktop) {
+            margin-top: 48px; 
+            font-size: 18px;
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &--accent {
+
         }
     }
 }
