@@ -196,6 +196,20 @@
         }
     }
 
+    &__item--black:nth-child(2) {
+        @include mq(laptop) {
+            position: relative;
+
+            & > .site-nav__link {
+
+                position: relative;
+                &::after {
+                    border-top: 6px solid $color-text;
+                }
+            }
+        }
+    }
+
     &__link {
         position: relative;
         // display: block;
@@ -215,6 +229,15 @@
     &__link:focus {
         // color: $color-akcent;
         // scale: 1.1;
+        opacity: 0.9;
+    }
+
+    &__link--black {
+        color: $color-text;
+    }
+
+    &__link--black:hover,
+    &__link--black:focus {
         opacity: 0.9;
     }
 
