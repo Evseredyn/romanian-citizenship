@@ -1,0 +1,220 @@
+.docs {
+
+    &__pre-title {
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.25;
+        text-align: center;
+        color: $color-akcent;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        font-size: clamp(1.75rem, 1.571rem + 0.89vw, 2rem);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-black;
+
+        @include mq(tablet) {
+            margin-bottom: 48px;
+            font-size: 48px;
+        }
+
+        @include mq(desktop) {
+            font-size: 64px;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 24px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.65;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: $color-secondary-title;
+                        
+        @include mq(desktop) {    
+            font-size: 16px;
+        }
+                        
+        @include mq(monitor) {    
+            font-size: 18px;
+        } 
+    }
+
+    // Контейнер для прокрутки на мобілці
+    &__table-wrapper {
+        width: 100%;
+        overflow-x: auto; // Горизонтальний скрол, якщо не влазить
+        -webkit-overflow-scrolling: touch; // Плавний скрол на iOS
+        margin-bottom: 32px;
+        
+        // Стилізація самого скролбару (опціонально, щоб був тонким)
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-border;
+            border-radius: 10px;
+        }
+    }
+
+    &__table {
+        width: 100%;
+        min-width: 600px; // Гарантує, що на мобайлі таблиця не "злипнеться" і буде скрол
+        border-collapse: separate; // Важливо для відступів між рядками
+        border-spacing: 0 8px; // Робимо "дихання" між рядками як на макеті
+        text-align: left;
+
+        @include mq(tablet) {
+            min-width: 100%; // На планшеті вже влізе повністю
+        border-spacing: 0 12px; // Робимо "дихання" між рядками як на макеті
+        }
+
+        thead th {
+            padding: 0 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $color-tab-text; // Світло-сірий текст заголовків
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: none;
+
+            @include mq(tablet) {
+                font-size: 14px;
+            }
+        }
+
+        tbody tr {
+            background-color: $color-white-bg; // Твій фоновий колір картки
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px); // Легкий ефект при наведенні
+            }
+        }
+
+        tbody td {
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: $color-text;
+            vertical-align: middle;
+
+            @include mq(tablet) {
+                font-size: 16px;
+            }
+
+            // Скругляємо кути тільки для крайніх комірок рядка
+            &:first-child {
+                border-radius: 16px 0 0 16px;
+                font-weight: 600;
+                color: $color-text;
+                width: 50px;
+            }
+
+            &:last-child {
+                border-radius: 0 16px 16px 0;
+                text-align: right;
+                font-size: 16px;
+                white-space: nowrap; // Ціна завжди в один рядок
+            }
+        }
+
+        th:last-child, 
+        td:last-child {
+            text-align: right;
+            padding-right: 24px; // Додай трохи відступу від краю картки
+        }
+
+        td:last-child {
+            font-weight: 600;
+        }
+    }
+
+    &__accent--line {
+        margin-top: 20px;
+        padding: 40px 30px;
+        border-radius: 16px;
+        background-color: $color-akcent;
+
+        @include mq(laptop) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @include mq(desktop) {
+            gap: 40px;
+            padding: 40px 60px;
+        }
+    }
+
+    &__accent--text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 125%;
+        color: $color-muted-text;
+
+        @include mq(laptop) {
+            flex-basis: auto;
+            font-size: 18px;
+        }
+
+        @include mq(desktop) {
+            font-size: 22px;
+        }
+
+        @include mq(monitor) {
+            font-size: 24px;
+        }
+    }
+
+    &__link {
+        display: block;
+        // width: 80%;
+        max-width: 280px;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 32px;
+        font-size: clamp(0.75rem, 0.5rem + 1.25vw, 0.875rem);
+        line-height: 1.7;
+        font-weight: 500;
+        color: $color-black;
+        background-color: $color-white-bg;
+        text-align: center;
+        border-radius: 16px;
+        box-shadow: $shadow;
+
+        @include mq(tablet) {
+            // max-width: 280px;
+        }
+
+        @include mq(laptop) {
+            flex-shrink: 0;       // Кнопка не стискається
+            white-space: nowrap;
+            margin-top: 0;
+        }
+
+        @include mq(desktop) {
+            max-width: 320px;
+            font-size: 18px;
+        }
+    }
+}
